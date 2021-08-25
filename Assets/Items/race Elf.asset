@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Elf
   Description: Long eared creature
-  Sprite: {fileID: 21300000, guid: c49f9f78d137969408f35e7aebd88e0e, type: 3}
+  Avatar: {fileID: 21300000, guid: c49f9f78d137969408f35e7aebd88e0e, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

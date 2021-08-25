@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Human
   Description: Typical normie prick
-  Sprite: {fileID: 21300000, guid: c2236a3bb8981114ebf4360cced3a353, type: 3}
+  Avatar: {fileID: 21300000, guid: c2236a3bb8981114ebf4360cced3a353, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

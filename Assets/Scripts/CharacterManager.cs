@@ -13,6 +13,7 @@ public class CharacterManager : MonoBehaviour
     public GameObject panelChacter;
     public TextMeshProUGUI txtItemName;
     public TextMeshProUGUI txtItemDescription;
+    public TextMeshProUGUI txtCharacterInfo;
 
     // Panels
     public GameObject panelRace;
@@ -62,22 +63,16 @@ public class CharacterManager : MonoBehaviour
     private void Start()
     {
         contentRace = panelRace.transform.GetChild(0);
-        //contentTrait = panelTrait.transform.GetChild(0);
-        //contentCloth = panelCloth.transform.GetChild(0);
-        //contentTable = panelTable.transform.GetChild(0);
-        //contentWall = panelWall.transform.GetChild(0);
-        //contentHobby = panelHobby.transform.GetChild(0);
+        contentTrait = panelTrait.transform.GetChild(0);
+        contentCloth = panelCloth.transform.GetChild(0);
+        contentTable = panelTable.transform.GetChild(0);
+        contentWall = panelWall.transform.GetChild(0);
+        contentHobby = panelHobby.transform.GetChild(0);
 
         DisplayChooseRace(true);
     }
 
-    public void ChooseItem(Item _itemHolder, Item _item)
-    {
-        _itemHolder = _item;
-    }
-
-
-    // Item 1: Race
+    // Item 1: RACE
     public void DisplayChooseRace(bool status)
     {
         panelRace.SetActive(status);
@@ -85,37 +80,36 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        foreach (Item item in races)
-        {
-            ItemScript newItem = Instantiate(itemPrefab, contentRace);
-            newItem.image.sprite = item.Sprite;
-            newItem.btnChoose.onClick.AddListener(() =>
-            {
-                txtItemName.text = item.name;
-                txtItemDescription.text = item.Description;
-                ChooseItem(race, item);
-            });
-        }
+        txtItemName.text = "";
+        txtItemDescription.text = "";
 
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * (races.Count % 3)), 0);
-        
-        // 
+        if (contentRace.childCount == 0)
+        {
+            foreach (Item item in races)
+            {
+                ItemScript newItem = Instantiate(itemPrefab, contentRace);
+                newItem.image.sprite = item.Avatar;
+                newItem.btnChoose.onClick.AddListener(() =>
+                {
+                    txtItemName.text = item.Name;
+                    txtItemDescription.text = item.Description;
+                    race = item;
+                });
+            }
+        }
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(races.Count / 3)), 0);
+
+        // Prev -> X
         btnPrev.gameObject.SetActive(false);
         btnPrev.onClick.RemoveAllListeners();
-        
+
         // Next -> Trait
         btnNext.onClick.RemoveAllListeners();
-        btnNext.onClick.AddListener(() =>
-        {
-            if (race == null) // Check đã chọn chưa
-                return;
-            DisplayChooseTrait(true);
-            DisplayChooseRace(false);
-        });
-        
+        btnNext.onClick.AddListener(() => { if (race == null) return; btnPrev.gameObject.SetActive(true); DisplayChooseTrait(true); DisplayChooseRace(false); });
+
     }
 
-    // Item 2: Trait
+    // Item 2: TRAIT
     private void DisplayChooseTrait(bool status)
     {
         panelTrait.SetActive(status);
@@ -123,40 +117,35 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        foreach (Item item in traits)
-        {
-            ItemScript newItem = Instantiate(itemPrefab, contentTrait);
-            newItem.image.sprite = item.Sprite;
-            newItem.btnChoose.onClick.AddListener(() =>
-            {
-                txtItemName.text = item.name;
-                txtItemDescription.text = item.Description;
-                ChooseItem(trait, item);
+        txtItemName.text = "";
+        txtItemDescription.text = "";
 
-                //DisplayChooseCloth(true);
-                //DisplayChooseTrait(false);
-            });
+        if (contentTrait.childCount == 0)
+        {
+            foreach (Item item in traits)
+            {
+                ItemScript newItem = Instantiate(itemPrefab, contentTrait);
+                newItem.image.sprite = item.Avatar;
+                newItem.btnChoose.onClick.AddListener(() =>
+                {
+                    txtItemName.text = item.Name;
+                    txtItemDescription.text = item.Description;
+                    trait = item;
+                });
+            }
         }
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * (races.Count % 3)), 0);
-        
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(traits.Count / 3)), 0);
+
         // Prev -> Race
         btnPrev.onClick.RemoveAllListeners();
-        btnPrev.onClick.AddListener(() =>
-        {
+        btnPrev.onClick.AddListener(() => { DisplayChooseRace(true); DisplayChooseTrait(false); });
 
-        });
-        
         // Next -> Cloth
         btnNext.onClick.RemoveAllListeners();
-        btnNext.onClick.AddListener(() =>
-        {
-
-        });
-        panelRace.SetActive(false);
-        panelTrait.SetActive(status);
+        btnNext.onClick.AddListener(() => { if (trait == null) return; DisplayChooseCloth(true); DisplayChooseTrait(false); });
     }
 
-    // Item 3: Clothes
+    // Item 3: CLOTH
     private void DisplayChooseCloth(bool status)
     {
         panelCloth.SetActive(status);
@@ -164,25 +153,36 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        foreach (Item item in races)
-        {
-            ItemScript newItem = Instantiate(itemPrefab, contentCloth);
-            newItem.image.sprite = item.Sprite;
-            newItem.btnChoose.onClick.AddListener(() =>
-            {
-                txtItemName.text = item.name;
-                txtItemDescription.text = item.Description;
-                ChooseItem(cloth, item);
+        txtItemName.text = "";
+        txtItemDescription.text = "";
 
-                //DisplayChooseTable(true);
-                //DisplayChooseCloth(false);
-            });
+        if (contentCloth.childCount == 0)
+        {
+            foreach (Item item in clothes)
+            {
+                ItemScript newItem = Instantiate(itemPrefab, contentCloth);
+                newItem.image.sprite = item.Avatar;
+                newItem.btnChoose.onClick.AddListener(() =>
+                {
+                    txtItemName.text = item.Name;
+                    txtItemDescription.text = item.Description;
+                    cloth = item;
+                });
+            }
         }
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * (races.Count % 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(clothes.Count / 3)), 0);
+
+        // Prev -> Cloth
+        btnPrev.onClick.RemoveAllListeners();
+        btnPrev.onClick.AddListener(() => { DisplayChooseTrait(true); DisplayChooseCloth(false); });
+
+        // Next -> Table
+        btnNext.onClick.RemoveAllListeners();
+        btnNext.onClick.AddListener(() => { if (cloth == null) return; DisplayChooseTable(true); DisplayChooseCloth(false); });
     }
 
 
-    // Item 4: Tables
+    // Item 4: TABLE
     private void DisplayChooseTable(bool status)
     {
         panelTable.SetActive(status);
@@ -190,61 +190,104 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        foreach (Item item in races)
-        {
-            ItemScript newItem = Instantiate(itemPrefab, contentTable);
-            newItem.image.sprite = item.Sprite;
-            newItem.btnChoose.onClick.AddListener(() =>
-            {
-                txtItemName.text = item.name;
-                txtItemDescription.text = item.Description;
-                ChooseItem(table, item);
+        txtItemName.text = "";
+        txtItemDescription.text = "";
 
-                //DisplayChooseWall(true);
-                //DisplayChooseTable(false);
-            });
+        if (contentTable.childCount == 0)
+        {
+            foreach (Item item in tables)
+            {
+                ItemScript newItem = Instantiate(itemPrefab, contentTable);
+                newItem.image.sprite = item.Avatar;
+                newItem.btnChoose.onClick.AddListener(() =>
+                {
+                    txtItemName.text = item.Name;
+                    txtItemDescription.text = item.Description;
+                    table = item;
+                });
+            }
         }
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * (races.Count % 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(tables.Count / 3)), 0);
+
+        // Prev -> Cloth
+        btnPrev.onClick.RemoveAllListeners();
+        btnPrev.onClick.AddListener(() => { DisplayChooseCloth(true); DisplayChooseTable(false); });
+
+        // Next -> Wall
+        btnNext.onClick.RemoveAllListeners();
+        btnNext.onClick.AddListener(() => { if (table == null) return; DisplayChooseWall(true); DisplayChooseTable(false); });
     }
 
-    // Item 5: Walls
+    // Item 5: WALL
     private void DisplayChooseWall(bool status)
     {
-        foreach (Item item in walls)
-        {
-            ItemScript newItem = Instantiate(itemPrefab, contentWall);
-            newItem.image.sprite = item.Sprite;
-            newItem.btnChoose.onClick.AddListener(() =>
-            {
-                txtItemName.text = item.name;
-                txtItemDescription.text = item.Description;
-                ChooseItem(wall, item);
+        panelWall.SetActive(status);
 
-                //DisplayChooseHobby(true);
-                //DisplayChooseWall(false);
-            });
+        if (!status)
+            return;
+
+        txtItemName.text = "";
+        txtItemDescription.text = "";
+
+        if (contentWall.childCount == 0)
+        {
+            foreach (Item item in walls)
+            {
+                ItemScript newItem = Instantiate(itemPrefab, contentWall);
+                newItem.image.sprite = item.Avatar;
+                newItem.btnChoose.onClick.AddListener(() =>
+                {
+                    txtItemName.text = item.Name;
+                    txtItemDescription.text = item.Description;
+                    wall = item;
+                });
+            }
         }
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * (races.Count % 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(walls.Count / 3)), 0);
+
+        // Prev -> Table
+        btnPrev.onClick.RemoveAllListeners();
+        btnPrev.onClick.AddListener(() => { DisplayChooseTable(true); DisplayChooseWall(false); });
+
+        // Next -> Hobby
+        btnNext.onClick.RemoveAllListeners();
+        btnNext.onClick.AddListener(() => { if (wall == null) return; DisplayChooseHobby(true); DisplayChooseWall(false); });
     }
 
-    // Item 6: Hobbies
+    // Item 6: HOBBY
     private void DisplayChooseHobby(bool status)
     {
-        foreach (Item item in hobbies)
-        {
-            ItemScript newItem = Instantiate(itemPrefab, contentHobby);
-            newItem.image.sprite = item.Sprite;
-            newItem.btnChoose.onClick.AddListener(() =>
-            {
-                txtItemName.text = item.name;
-                txtItemDescription.text = item.Description;
-                ChooseItem(hobby, item);
+        panelHobby.SetActive(status);
 
-                //DisplayChooseHobby(true);
-                //DisplayChooseWall(false);
-            });
+        if (!status)
+            return;
+
+        txtItemName.text = "";
+        txtItemDescription.text = "";
+
+        if (contentHobby.childCount == 0)
+        {
+            foreach (Item item in hobbies)
+            {
+                ItemScript newItem = Instantiate(itemPrefab, contentHobby);
+                newItem.image.sprite = item.Avatar;
+                newItem.btnChoose.onClick.AddListener(() =>
+                {
+                    txtItemName.text = item.Name;
+                    txtItemDescription.text = item.Description;
+                    hobby = item;
+                });
+            }
         }
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * (races.Count % 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(hobbies.Count / 3)), 0);
+
+        // Prev -> Wall
+        btnPrev.onClick.RemoveAllListeners();
+        btnPrev.onClick.AddListener(() => { DisplayChooseWall(true); DisplayChooseHobby(false); });
+
+        // Next -> Character
+        btnNext.onClick.RemoveAllListeners();
+        btnNext.onClick.AddListener(() => { if (hobby == null) return; DisplayChooseHobby(false); DisplayCharacter(true); });
     }
 
 
@@ -257,11 +300,17 @@ public class CharacterManager : MonoBehaviour
 
     public void GetCharacter()
     {
-
+        txtCharacterInfo.text = "Race: " + race.Name;
+        txtCharacterInfo.text += "\nTrait: " + trait.Name;
+        txtCharacterInfo.text += "\nCloth: " + cloth.Name;
+        txtCharacterInfo.text += "\nTable: " + table.Name;
+        txtCharacterInfo.text += "\nWall: " + wall.Name;
+        txtCharacterInfo.text += "\nHobby: " + hobby.Name;
     }
 
     public void ResetCharacter()
     {
+        panelCreate.SetActive(true);
         DisplayChooseRace(true);
     }
 }

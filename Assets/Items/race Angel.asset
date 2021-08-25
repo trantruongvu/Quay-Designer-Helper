@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Angel
   Description: This is an Angel
-  Sprite: {fileID: 21300000, guid: 3ae6a188d8fbc00458fb5ac06d2c23eb, type: 3}
+  Avatar: {fileID: 21300000, guid: 3ae6a188d8fbc00458fb5ac06d2c23eb, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

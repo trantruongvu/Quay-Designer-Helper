@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Trait 1
   Description: Something about trait 1
-  Sprite: {fileID: 21300000, guid: 7943e425639c74649a4d41a32cfb6980, type: 3}
+  Avatar: {fileID: 21300000, guid: 4142498dd4bca7a41ad3f0223275b9c7, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

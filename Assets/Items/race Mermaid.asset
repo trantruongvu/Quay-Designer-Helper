@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Mermaid
   Description: Long ago, a guy fucked a fish
-  Sprite: {fileID: 21300000, guid: 283b94eefed209c43a5e2c2a2121a596, type: 3}
+  Avatar: {fileID: 21300000, guid: 283b94eefed209c43a5e2c2a2121a596, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

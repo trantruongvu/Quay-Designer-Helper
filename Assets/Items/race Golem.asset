@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Golem
   Description: Rocky boi
-  Sprite: {fileID: 21300000, guid: f371dc21439fa9048a3b5f007bd8dbb0, type: 3}
+  Avatar: {fileID: 21300000, guid: f371dc21439fa9048a3b5f007bd8dbb0, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

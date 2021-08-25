@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hobby 2
   Description: Info of Hobby 2
-  Sprite: {fileID: 21300000, guid: daed2bdd07db6324390b176142e7c0c8, type: 3}
+  Avatar: {fileID: 21300000, guid: 4142498dd4bca7a41ad3f0223275b9c7, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hobby 3
   Description: Info of Hobby 3
-  Sprite: {fileID: 21300000, guid: 69849efa0be4ce74db86b1b5c73798dc, type: 3}
+  Avatar: {fileID: 21300000, guid: eeaffd8d1a60207488e8b22294e14451, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0

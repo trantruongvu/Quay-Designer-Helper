@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Table 1
   Description: Description of table 1
-  Sprite: {fileID: 21300000, guid: 7e12624426c52de42b3300d0ffd803ab, type: 3}
+  Avatar: {fileID: 21300000, guid: 7943e425639c74649a4d41a32cfb6980, type: 3}
+  Sprite: {fileID: 0}
   ValueOrganised: 0
   ValueKnowledge: 0
   ValueCreative: 0
