@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Wall 1
   Description: 'A dry wall '
+  Default: {fileID: 21300000, guid: e4ae705d0859ca84282e7fd0cb5fc7f3, type: 3}
   Avatar: {fileID: 21300000, guid: 7e12624426c52de42b3300d0ffd803ab, type: 3}
   Sprite: {fileID: 0}
   ValueOrganised: 0

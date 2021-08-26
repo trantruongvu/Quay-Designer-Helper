@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
-  m_Name: race Demon
+  m_Name: race Werewolf
   m_EditorClassIdentifier: 
-  Name: Demon
-  Description: I think this is a Demon
+  Name: Werewolf
+  Description: I think this is a Werewolf
+  Default: {fileID: 21300000, guid: 420cb701634cfaa4a938962e2e0ed6af, type: 3}
   Avatar: {fileID: 21300000, guid: 63731c2916ee5064d8fe1a67ef96ac05, type: 3}
   Sprite: {fileID: 0}
   ValueOrganised: 0

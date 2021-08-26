@@ -38,16 +38,22 @@ public class CharacterManager : MonoBehaviour
     public Transform lineBottom;
 
     // Items
+    List<ItemScript> _races;
     public List<Item> races;
     private Item race;
+    List<ItemScript> _traits;
     public List<Item> traits;
     private Item trait;
+    List<ItemScript> _clothes;
     public List<Item> clothes;
     private Item cloth;
+    List<ItemScript> _tables;
     public List<Item> tables;
     private Item table;
+    List<ItemScript> _walls;
     public List<Item> walls;
     private Item wall;
+    List<ItemScript> _hobbies;
     public List<Item> hobbies;
     private Item hobby;
 
@@ -62,6 +68,13 @@ public class CharacterManager : MonoBehaviour
 
     private void Start()
     {
+        _races = new List<ItemScript>();
+        _traits = new List<ItemScript>();
+        _clothes = new List<ItemScript>();
+        _tables = new List<ItemScript>();
+        _walls = new List<ItemScript>();
+        _hobbies = new List<ItemScript>();
+
         contentRace = panelRace.transform.GetChild(0);
         contentTrait = panelTrait.transform.GetChild(0);
         contentCloth = panelCloth.transform.GetChild(0);
@@ -80,23 +93,12 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        txtItemName.text = "";
-        txtItemDescription.text = "";
+        if (race == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = race.Name; txtItemDescription.text = race.Description; }
 
         if (contentRace.childCount == 0)
-        {
-            foreach (Item item in races)
-            {
-                ItemScript newItem = Instantiate(itemPrefab, contentRace);
-                newItem.image.sprite = item.Avatar;
-                newItem.btnChoose.onClick.AddListener(() =>
-                {
-                    txtItemName.text = item.Name;
-                    txtItemDescription.text = item.Description;
-                    race = item;
-                });
-            }
-        }
+            SpawnItems(races, contentRace);
+
         lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(races.Count / 3)), 0);
 
         // Prev -> X
@@ -117,23 +119,12 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        txtItemName.text = "";
-        txtItemDescription.text = "";
+        if (trait == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = trait.Name; txtItemDescription.text = trait.Description; }
 
         if (contentTrait.childCount == 0)
-        {
-            foreach (Item item in traits)
-            {
-                ItemScript newItem = Instantiate(itemPrefab, contentTrait);
-                newItem.image.sprite = item.Avatar;
-                newItem.btnChoose.onClick.AddListener(() =>
-                {
-                    txtItemName.text = item.Name;
-                    txtItemDescription.text = item.Description;
-                    trait = item;
-                });
-            }
-        }
+            SpawnItems(traits, contentTrait);
+
         lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(traits.Count / 3)), 0);
 
         // Prev -> Race
@@ -153,23 +144,12 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        txtItemName.text = "";
-        txtItemDescription.text = "";
+        if (cloth == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = cloth.Name; txtItemDescription.text = cloth.Description; }
 
         if (contentCloth.childCount == 0)
-        {
-            foreach (Item item in clothes)
-            {
-                ItemScript newItem = Instantiate(itemPrefab, contentCloth);
-                newItem.image.sprite = item.Avatar;
-                newItem.btnChoose.onClick.AddListener(() =>
-                {
-                    txtItemName.text = item.Name;
-                    txtItemDescription.text = item.Description;
-                    cloth = item;
-                });
-            }
-        }
+            SpawnItems(clothes, contentCloth);
+
         lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(clothes.Count / 3)), 0);
 
         // Prev -> Cloth
@@ -190,23 +170,12 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        txtItemName.text = "";
-        txtItemDescription.text = "";
+        if (table == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = table.Name; txtItemDescription.text = table.Description; }
 
         if (contentTable.childCount == 0)
-        {
-            foreach (Item item in tables)
-            {
-                ItemScript newItem = Instantiate(itemPrefab, contentTable);
-                newItem.image.sprite = item.Avatar;
-                newItem.btnChoose.onClick.AddListener(() =>
-                {
-                    txtItemName.text = item.Name;
-                    txtItemDescription.text = item.Description;
-                    table = item;
-                });
-            }
-        }
+            SpawnItems(tables, contentTable);
+
         lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(tables.Count / 3)), 0);
 
         // Prev -> Cloth
@@ -226,23 +195,12 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        txtItemName.text = "";
-        txtItemDescription.text = "";
+        if (wall == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = wall.Name; txtItemDescription.text = wall.Description; }
 
         if (contentWall.childCount == 0)
-        {
-            foreach (Item item in walls)
-            {
-                ItemScript newItem = Instantiate(itemPrefab, contentWall);
-                newItem.image.sprite = item.Avatar;
-                newItem.btnChoose.onClick.AddListener(() =>
-                {
-                    txtItemName.text = item.Name;
-                    txtItemDescription.text = item.Description;
-                    wall = item;
-                });
-            }
-        }
+            SpawnItems(walls, contentWall);
+
         lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(walls.Count / 3)), 0);
 
         // Prev -> Table
@@ -262,23 +220,12 @@ public class CharacterManager : MonoBehaviour
         if (!status)
             return;
 
-        txtItemName.text = "";
-        txtItemDescription.text = "";
+        if (hobby == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = hobby.Name; txtItemDescription.text = hobby.Description; }
 
         if (contentHobby.childCount == 0)
-        {
-            foreach (Item item in hobbies)
-            {
-                ItemScript newItem = Instantiate(itemPrefab, contentHobby);
-                newItem.image.sprite = item.Avatar;
-                newItem.btnChoose.onClick.AddListener(() =>
-                {
-                    txtItemName.text = item.Name;
-                    txtItemDescription.text = item.Description;
-                    hobby = item;
-                });
-            }
-        }
+            SpawnItems(hobbies, contentHobby);
+
         lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(hobbies.Count / 3)), 0);
 
         // Prev -> Wall
@@ -288,6 +235,70 @@ public class CharacterManager : MonoBehaviour
         // Next -> Character
         btnNext.onClick.RemoveAllListeners();
         btnNext.onClick.AddListener(() => { if (hobby == null) return; DisplayChooseHobby(false); DisplayCharacter(true); });
+    }
+
+    /// <summary>
+    /// Spawn Items
+    /// </summary>
+    /// <param name="items">Item list</param>
+    /// <param name="_prefab">Item prefab</param>
+    /// <param name="_parent">Item to spawn in</param>
+    /// <param name="_item">Item holder</param>
+    private void SpawnItems(List<Item> items, Transform parent)
+    {
+        if (parent.childCount > 0)
+            return;
+
+        foreach (Item item in items)
+        {
+            ItemScript newItem = Instantiate(itemPrefab, parent);
+            newItem.image.sprite = item.Default;
+            newItem.btnChoose.onClick.AddListener(() =>
+            {
+                txtItemName.text = item.Name;
+                txtItemDescription.text = item.Description;
+
+                if (parent == contentRace)
+                {
+                    race = item;
+                    for (int i = 0; i < _races.Count; i++) { _races[i].image.sprite = races[i].Default; }
+                }
+                else if (parent == contentTrait)
+                {
+                    trait = item;
+                    for (int i = 0; i < _traits.Count; i++) { _traits[i].image.sprite = traits[i].Default; }
+                }
+                else if (parent == contentWall)
+                {
+                    wall = item;
+                    for (int i = 0; i < _walls.Count; i++) { _walls[i].image.sprite = walls[i].Default; }
+                }
+                else if (parent == contentTable)
+                {
+                    table = item;
+                    for (int i = 0; i < _tables.Count; i++) { _tables[i].image.sprite = tables[i].Default; }
+                }
+                else if (parent == contentCloth)
+                {
+                    cloth = item;
+                    for (int i = 0; i < _clothes.Count; i++) { _clothes[i].image.sprite = clothes[i].Default; }
+                }
+                else if (parent == contentHobby)
+                {
+                    hobby = item;
+                    for (int i = 0; i < _hobbies.Count; i++) { _hobbies[i].image.sprite = hobbies[i].Default; }
+                }
+
+                newItem.image.sprite = item.Avatar;
+            });
+
+            if      (parent == contentRace) { _races.Add(newItem); }
+            else if (parent == contentTrait) { _traits.Add(newItem); }
+            else if (parent == contentWall) { _walls.Add(newItem); }
+            else if (parent == contentTable) { _tables.Add(newItem); }
+            else if (parent == contentCloth) { _clothes.Add(newItem); }
+            else if (parent == contentHobby) { _hobbies.Add(newItem); }
+        }
     }
 
 
