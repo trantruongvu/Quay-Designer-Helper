@@ -51,7 +51,7 @@ public class GameController : MonoBehaviour
         canvasFortune.SetActive(status);
     }
 
-    IEnumerator I_TurnOffFortune()
+    public IEnumerator I_TurnOffFortune()
     {
         yield return new WaitForSeconds(3f);
         btnTurnOffFortune.SetActive(true);

@@ -13,7 +13,6 @@ public class Card : MonoBehaviour
     {
     }
 
-
     public void ChooseCard()
     {
         if (CardSpawner.Instance.isChoosingCard)
@@ -47,6 +46,7 @@ public class Card : MonoBehaviour
                     // Lật lá bài
                     Sequence seq4 = DOTween.Sequence();
                     seq4.Append(transform.DORotate(Vector3.zero, 1f));
+                    seq4.OnComplete(() => { StartCoroutine(GameController.Instance.I_TurnOffFortune()); });
                     seq4.Play();
                 });
                 seq3.Play();

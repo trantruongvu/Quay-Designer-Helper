@@ -8,8 +8,8 @@ public class CardSpawner : MonoBehaviour
     public static CardSpawner Instance;
 
     public Transform cardsSpinner;
-    public Transform cardsHolder;
     public Transform cardPlacement;
+    public GameObject fakeCardPlacement;
     public Text txtDebug;
 
     public List<Sprite> cardSprites;
@@ -22,7 +22,7 @@ public class CardSpawner : MonoBehaviour
     private List<Card> cards;
 
     private Animator cardAnimator;
-    public bool isChoosingCard = false;
+    public bool isChoosingCard;
 
     private void Awake()
     {
@@ -30,8 +30,11 @@ public class CardSpawner : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
+        RemoveCards();
+        cards = new List<Card>();
+        fakeCardPlacement.SetActive(true);
         cardAnimator = gameObject.GetComponent<Animator>();
 
         if (cardSprites.Count == 0)
@@ -53,8 +56,8 @@ public class CardSpawner : MonoBehaviour
 
     public void RemoveCards()
     {
-        foreach (Card card in cards)
-            Destroy(card);
+        foreach (Transform card in cardsParent)
+            Destroy(card.gameObject);
     }
 
     // Update is called once per frame
@@ -76,7 +79,7 @@ public class CardSpawner : MonoBehaviour
                 cards.Add(newCard);
                 angleSpawn += angleMin;
 
-                //Debug.Log("angleSpawn : " + angleSpawn);
+                Debug.Log("angleSpawn : " + angleSpawn);
 
                 if (angleSpawn >= 180)
                     cardPlacement.gameObject.SetActive(false);
@@ -84,9 +87,16 @@ public class CardSpawner : MonoBehaviour
         }
     }
 
+    public void DisplayCardPlacement()
+    {
+        //cardPlacement.GetComponent<RectTransform>().anchoredPosition = cardPlacementPos;
+        cardPlacement.gameObject.SetActive(true);
+        fakeCardPlacement.SetActive(false);
+    }
+
     public void StartSpreading()
     {
-        cards = new List<Card>();
+        isChoosingCard = false;
         isSpreading = true;
     }
 
