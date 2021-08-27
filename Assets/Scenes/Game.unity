@@ -722,80 +722,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &318116549
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 318116550}
-  - component: {fileID: 318116552}
-  - component: {fileID: 318116551}
-  m_Layer: 5
-  m_Name: Fake Card Placement
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &318116550
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318116549}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1555902232}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 49.99994}
-  m_SizeDelta: {x: 290, y: 460}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &318116551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318116549}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2c198a2f48d7aca478ac0ad8c41d2a11, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &318116552
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318116549}
-  m_CullTransparentMesh: 0
 --- !u!1 &363067447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1203,8 @@ GameObject:
   - component: {fileID: 575392062}
   - component: {fileID: 575392061}
   - component: {fileID: 575392060}
+  - component: {fileID: 575392065}
+  - component: {fileID: 575392064}
   m_Layer: 5
   m_Name: Canvas Cards
   m_TagString: Untagged
@@ -1365,6 +1293,65 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &575392064
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575392059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ea61031cd5795404fa8b95ee83aa5d20, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &575392065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575392059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ba30827e0dc0841a9eefa974c421cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardsSpinner: {fileID: 654389261}
+  cardPlacement: {fileID: 1778894683}
+  txtDebug: {fileID: 1940496354}
+  cardSprites:
+  - {fileID: 21300000, guid: e31fd1a9173bc884fbb03843b405e33f, type: 3}
+  - {fileID: 21300000, guid: f565e8e90fb86974a870570e3cdab22a, type: 3}
+  - {fileID: 21300000, guid: b604601c63e7e7f41966fa37549cb8b5, type: 3}
+  - {fileID: 21300000, guid: 1140d56fc2715254abced5d91395e4e0, type: 3}
+  - {fileID: 21300000, guid: dea59e658ce4c54468077753e50e1e62, type: 3}
+  - {fileID: 21300000, guid: a06d6395ff72fe140adfce872a226375, type: 3}
+  - {fileID: 21300000, guid: 35aa927e4b22089488d1345d1ccde9c5, type: 3}
+  - {fileID: 21300000, guid: 745382303d5ae2e46855f46ec7d613bc, type: 3}
+  - {fileID: 21300000, guid: 9a5bb80776611874da24037e7143407d, type: 3}
+  - {fileID: 21300000, guid: 3329ea2f9f64a3d458c29cda78e0c88a, type: 3}
+  - {fileID: 21300000, guid: 4074ca61de40504419689d83d78ffc67, type: 3}
+  - {fileID: 21300000, guid: fb179f88a611f8243ad8bf55cd2bc255, type: 3}
+  - {fileID: 21300000, guid: 32bc9929508e6a0409cbe3e3a9e5614c, type: 3}
+  - {fileID: 21300000, guid: 34960bd8b1b15554fb6b7de5fa1d1100, type: 3}
+  - {fileID: 21300000, guid: 7c46f7f8ba931664599a0b9d0f25ee67, type: 3}
+  - {fileID: 21300000, guid: 0ea13268cf111054a8814435cb1d86a2, type: 3}
+  - {fileID: 21300000, guid: 0d4f1ba84eb88c4478d1ab831aad38d9, type: 3}
+  - {fileID: 21300000, guid: ba21419913d2e4a49b6af8cdbe12c411, type: 3}
+  - {fileID: 21300000, guid: 82bf9374f68244a4dbee80bc52aca480, type: 3}
+  - {fileID: 21300000, guid: aa2ed7f8e87f48b4b8beefc8489787a6, type: 3}
+  cardsParent: {fileID: 1568009778}
+  cardPrefab: {fileID: -5179398066792714247, guid: 970c3249670a71b4aa01d42f0da54fc6,
+    type: 3}
+  isChoosingCard: 0
 --- !u!1 &621465451
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1571,6 @@ GameObject:
   - component: {fileID: 654389261}
   - component: {fileID: 654389263}
   - component: {fileID: 654389262}
-  - component: {fileID: 654389264}
   - component: {fileID: 654389265}
   m_Layer: 5
   m_Name: Card Spinner
@@ -1650,25 +1636,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654389260}
   m_CullTransparentMesh: 0
---- !u!95 &654389264
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654389260}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7eae5db7ecc82ea4ab3f3c6cc10d49a4, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &654389265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1683,7 +1650,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardsSpinner: {fileID: 654389261}
   cardPlacement: {fileID: 1778894683}
-  fakeCardPlacement: {fileID: 318116549}
   txtDebug: {fileID: 1940496354}
   cardSprites:
   - {fileID: 21300000, guid: e31fd1a9173bc884fbb03843b405e33f, type: 3}
@@ -3680,7 +3646,6 @@ RectTransform:
   - {fileID: 1940496353}
   - {fileID: 1568009778}
   - {fileID: 862008260}
-  - {fileID: 318116550}
   m_Father: {fileID: 575392063}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

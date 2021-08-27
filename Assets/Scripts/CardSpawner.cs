@@ -9,7 +9,6 @@ public class CardSpawner : MonoBehaviour
 
     public Transform cardsSpinner;
     public Transform cardPlacement;
-    public GameObject fakeCardPlacement;
     public Text txtDebug;
 
     public List<Sprite> cardSprites;
@@ -21,7 +20,6 @@ public class CardSpawner : MonoBehaviour
     public Card cardPrefab;
     private List<Card> cards;
 
-    private Animator cardAnimator;
     public bool isChoosingCard;
 
     private void Awake()
@@ -33,9 +31,6 @@ public class CardSpawner : MonoBehaviour
     private void OnEnable()
     {
         RemoveCards();
-        cards = new List<Card>();
-        fakeCardPlacement.SetActive(true);
-        cardAnimator = gameObject.GetComponent<Animator>();
 
         if (cardSprites.Count == 0)
             angleMin = 180f * 2;
@@ -49,15 +44,14 @@ public class CardSpawner : MonoBehaviour
         //Debug.Log("angleSpawn : " + angleSpawn);
     }
 
-    public void DisplayCards()
-    {
-        cardAnimator.SetTrigger("SpreadCard");
-    }
-
     public void RemoveCards()
     {
         foreach (Transform card in cardsParent)
             Destroy(card.gameObject);
+        
+        cards = new List<Card>();
+        isChoosingCard = false;
+        cardPlacement.gameObject.SetActive(true);
     }
 
     // Update is called once per frame
@@ -66,12 +60,9 @@ public class CardSpawner : MonoBehaviour
         if (isSpreading)
         {
             float angle = cardsSpinner.localEulerAngles.z;
-            //txtDebug.text = Mathf.RoundToInt(angle).ToString();
 
             if (angle > angleSpawn)
             {
-                //Debug.Log("angle : " + angle);
-
                 Card newCard = Instantiate(cardPrefab, cardsParent);
                 newCard.transform.position = cardPlacement.position;
                 newCard.transform.rotation = cardPlacement.rotation;
@@ -79,19 +70,12 @@ public class CardSpawner : MonoBehaviour
                 cards.Add(newCard);
                 angleSpawn += angleMin;
 
-                Debug.Log("angleSpawn : " + angleSpawn);
+                //Debug.Log("angleSpawn : " + angleSpawn);
 
                 if (angleSpawn >= 180)
                     cardPlacement.gameObject.SetActive(false);
             }
         }
-    }
-
-    public void DisplayCardPlacement()
-    {
-        //cardPlacement.GetComponent<RectTransform>().anchoredPosition = cardPlacementPos;
-        cardPlacement.gameObject.SetActive(true);
-        fakeCardPlacement.SetActive(false);
     }
 
     public void StartSpreading()
