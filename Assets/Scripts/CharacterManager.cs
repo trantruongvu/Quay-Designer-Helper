@@ -30,12 +30,19 @@ public class CharacterManager : MonoBehaviour
     private Transform contentRace;
     private Transform contentTrait;
     private Transform contentCloth;
+    private Transform contentHobby;
     private Transform contentTable;
     private Transform contentWall;
-    private Transform contentHobby;
 
     // Seperate Line 
     public Transform lineBottom;
+
+    // Images
+    public Image imgRace;
+    public Image imgCloth;
+    public Image imgHobby;
+    public Image imgTable;
+    public Image imgWall;
 
     // Items
     List<ItemScript> _races;
@@ -47,15 +54,15 @@ public class CharacterManager : MonoBehaviour
     List<ItemScript> _clothes;
     public List<Item> clothes;
     private Item cloth;
+    List<ItemScript> _hobbies;
+    public List<Item> hobbies;
+    private Item hobby;
     List<ItemScript> _tables;
     public List<Item> tables;
     private Item table;
     List<ItemScript> _walls;
     public List<Item> walls;
     private Item wall;
-    List<ItemScript> _hobbies;
-    public List<Item> hobbies;
-    private Item hobby;
 
     // Buttons
     public Button btnPrev;
@@ -99,7 +106,7 @@ public class CharacterManager : MonoBehaviour
         if (contentRace.childCount == 0)
             SpawnItems(races, contentRace);
 
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(races.Count / 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.CeilToInt(races.Count / 3)), 0);
 
         // Prev -> X
         btnPrev.gameObject.SetActive(false);
@@ -125,7 +132,7 @@ public class CharacterManager : MonoBehaviour
         if (contentTrait.childCount == 0)
             SpawnItems(traits, contentTrait);
 
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(traits.Count / 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.CeilToInt(traits.Count / 3)), 0);
 
         // Prev -> Race
         btnPrev.onClick.RemoveAllListeners();
@@ -150,69 +157,28 @@ public class CharacterManager : MonoBehaviour
         if (contentCloth.childCount == 0)
             SpawnItems(clothes, contentCloth);
 
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(clothes.Count / 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.CeilToInt(clothes.Count / 3)), 0);
 
         // Prev -> Cloth
         btnPrev.onClick.RemoveAllListeners();
-        btnPrev.onClick.AddListener(() => { DisplayChooseTrait(true); DisplayChooseCloth(false); });
+        btnPrev.onClick.AddListener(() =>
+        {
+            DisplayChooseTrait(true);
+            DisplayChooseCloth(false);
+        });
 
         // Next -> Table
         btnNext.onClick.RemoveAllListeners();
-        btnNext.onClick.AddListener(() => { if (cloth == null) return; DisplayChooseTable(true); DisplayChooseCloth(false); });
+        btnNext.onClick.AddListener(() =>
+        {
+            if (cloth == null)
+                return;
+            DisplayChooseHobby(true);
+            DisplayChooseCloth(false);
+        });
     }
 
-
-    // Item 4: TABLE
-    private void DisplayChooseTable(bool status)
-    {
-        panelTable.SetActive(status);
-
-        if (!status)
-            return;
-
-        if (table == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
-        else { txtItemName.text = table.Name; txtItemDescription.text = table.Description; }
-
-        if (contentTable.childCount == 0)
-            SpawnItems(tables, contentTable);
-
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(tables.Count / 3)), 0);
-
-        // Prev -> Cloth
-        btnPrev.onClick.RemoveAllListeners();
-        btnPrev.onClick.AddListener(() => { DisplayChooseCloth(true); DisplayChooseTable(false); });
-
-        // Next -> Wall
-        btnNext.onClick.RemoveAllListeners();
-        btnNext.onClick.AddListener(() => { if (table == null) return; DisplayChooseWall(true); DisplayChooseTable(false); });
-    }
-
-    // Item 5: WALL
-    private void DisplayChooseWall(bool status)
-    {
-        panelWall.SetActive(status);
-
-        if (!status)
-            return;
-
-        if (wall == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
-        else { txtItemName.text = wall.Name; txtItemDescription.text = wall.Description; }
-
-        if (contentWall.childCount == 0)
-            SpawnItems(walls, contentWall);
-
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(walls.Count / 3)), 0);
-
-        // Prev -> Table
-        btnPrev.onClick.RemoveAllListeners();
-        btnPrev.onClick.AddListener(() => { DisplayChooseTable(true); DisplayChooseWall(false); });
-
-        // Next -> Hobby
-        btnNext.onClick.RemoveAllListeners();
-        btnNext.onClick.AddListener(() => { if (wall == null) return; DisplayChooseHobby(true); DisplayChooseWall(false); });
-    }
-
-    // Item 6: HOBBY
+    // Item 4: HOBBY
     private void DisplayChooseHobby(bool status)
     {
         panelHobby.SetActive(status);
@@ -226,16 +192,97 @@ public class CharacterManager : MonoBehaviour
         if (contentHobby.childCount == 0)
             SpawnItems(hobbies, contentHobby);
 
-        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.RoundToInt(hobbies.Count / 3)), 0);
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.CeilToInt(hobbies.Count / 3)), 0);
 
         // Prev -> Wall
         btnPrev.onClick.RemoveAllListeners();
-        btnPrev.onClick.AddListener(() => { DisplayChooseWall(true); DisplayChooseHobby(false); });
+        btnPrev.onClick.AddListener(() =>
+        {
+            DisplayChooseCloth(true);
+            DisplayChooseHobby(false);
+        });
 
         // Next -> Character
         btnNext.onClick.RemoveAllListeners();
-        btnNext.onClick.AddListener(() => { if (hobby == null) return; DisplayChooseHobby(false); DisplayCharacter(true); });
+        btnNext.onClick.AddListener(() =>
+        {
+            if (hobby == null)
+                return;
+            DisplayChooseHobby(false);
+            DisplayChooseTable(true);
+        });
     }
+
+
+    // Item 5: TABLE
+    private void DisplayChooseTable(bool status)
+    {
+        panelTable.SetActive(status);
+
+        if (!status)
+            return;
+
+        if (table == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = table.Name; txtItemDescription.text = table.Description; }
+
+        if (contentTable.childCount == 0)
+            SpawnItems(tables, contentTable);
+
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.CeilToInt(tables.Count / 3f)), 0);
+
+        // Prev -> Cloth
+        btnPrev.onClick.RemoveAllListeners();
+        btnPrev.onClick.AddListener(() =>
+        {
+            DisplayChooseHobby(true);
+            DisplayChooseTable(false);
+        });
+
+        // Next -> Wall
+        btnNext.onClick.RemoveAllListeners();
+        btnNext.onClick.AddListener(() =>
+        {
+            if (table == null) return;
+            DisplayChooseWall(true);
+            DisplayChooseTable(false);
+        });
+    }
+
+    // Item 6: WALL
+    private void DisplayChooseWall(bool status)
+    {
+        panelWall.SetActive(status);
+
+        if (!status)
+            return;
+
+        if (wall == null) { txtItemName.text = ""; txtItemDescription.text = ""; }
+        else { txtItemName.text = wall.Name; txtItemDescription.text = wall.Description; }
+
+        if (contentWall.childCount == 0)
+            SpawnItems(walls, contentWall);
+
+        lineBottom.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -(205 + 270 + 300 * Mathf.CeilToInt(walls.Count / 3)), 0);
+
+        // Prev -> Table
+        btnPrev.onClick.RemoveAllListeners();
+        btnPrev.onClick.AddListener(() =>
+        {
+            DisplayChooseTable(true);
+            DisplayChooseWall(false);
+        });
+
+        // Next -> Hobby
+        btnNext.onClick.RemoveAllListeners();
+        btnNext.onClick.AddListener(() =>
+        {
+            if (wall == null)
+                return;
+            DisplayCharacter(true);
+            DisplayChooseWall(false);
+        });
+    }
+
 
     /// <summary>
     /// Spawn Items
@@ -292,7 +339,7 @@ public class CharacterManager : MonoBehaviour
                 newItem.image.sprite = item.Avatar;
             });
 
-            if      (parent == contentRace) { _races.Add(newItem); }
+            if (parent == contentRace) { _races.Add(newItem); }
             else if (parent == contentTrait) { _traits.Add(newItem); }
             else if (parent == contentWall) { _walls.Add(newItem); }
             else if (parent == contentTable) { _tables.Add(newItem); }
@@ -311,12 +358,11 @@ public class CharacterManager : MonoBehaviour
 
     public void GetCharacter()
     {
-        txtCharacterInfo.text = "Race: " + race.Name;
-        txtCharacterInfo.text += "\nTrait: " + trait.Name;
-        txtCharacterInfo.text += "\nCloth: " + cloth.Name;
-        txtCharacterInfo.text += "\nTable: " + table.Name;
-        txtCharacterInfo.text += "\nWall: " + wall.Name;
-        txtCharacterInfo.text += "\nHobby: " + hobby.Name;
+        imgRace.sprite = race.Sprite;
+        imgCloth.sprite = cloth.Sprite;
+        imgHobby.sprite = hobby.Sprite;
+        imgTable.sprite = table.Sprite;
+        imgWall.sprite = wall.Sprite;
     }
 
     public void ResetCharacter()

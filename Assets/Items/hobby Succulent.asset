@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
+  m_Name: hobby Succulent
+  m_EditorClassIdentifier: 
+  Name: Succulent
+  Description: Nothing special. Just a decoration to keep you sane.
+  Default: {fileID: 21300000, guid: 0da935fde57c6cb4ebd6a65989a8c5fc, type: 3}
+  Avatar: {fileID: 21300000, guid: ee3da774005120a46ac103a37d37970e, type: 3}
+  Sprite: {fileID: 21300000, guid: f9a3c33bc75b4bf41b3bd6a7e919826b, type: 3}
+  ValueControl: 4
+  ValueExecution: 0
+  ValueThinking: 3
+  ValueResilient: 5

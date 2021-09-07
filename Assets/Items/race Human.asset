@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: race Human
   m_EditorClassIdentifier: 
   Name: Human
-  Description: Typical normie prick
+  Description: Humans are cooperative. They are flexible and could perform any tasks.
+    You work best in group work.
   Default: {fileID: 21300000, guid: f81ad562e4289f24a8c55ab248411817, type: 3}
   Avatar: {fileID: 21300000, guid: c2236a3bb8981114ebf4360cced3a353, type: 3}
-  Sprite: {fileID: 0}
-  ValueOrganised: 0
-  ValueKnowledge: 0
-  ValueCreative: 0
-  ValueResilient: 0
+  Sprite: {fileID: 21300000, guid: bbe4bec80be91e6499afe1b1d0e34e36, type: 3}
+  ValueControl: 5
+  ValueExecution: 5
+  ValueThinking: 5
+  ValueResilient: 5

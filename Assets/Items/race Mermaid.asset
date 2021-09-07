@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: race Mermaid
   m_EditorClassIdentifier: 
   Name: Mermaid
-  Description: Long ago, a guy fucked a fish
+  Description: Mermaids are natural hunters. You aim for achievement and have specific
+    plans to visualize it.
   Default: {fileID: 21300000, guid: 4f3a703c271d64d4791418221ff08d57, type: 3}
   Avatar: {fileID: 21300000, guid: 283b94eefed209c43a5e2c2a2121a596, type: 3}
-  Sprite: {fileID: 0}
-  ValueOrganised: 0
-  ValueKnowledge: 0
-  ValueCreative: 0
-  ValueResilient: 0
+  Sprite: {fileID: 21300000, guid: 2d5a0196fe92ae341b3d08fe65794942, type: 3}
+  ValueControl: 7
+  ValueExecution: 2
+  ValueThinking: 7
+  ValueResilient: 4

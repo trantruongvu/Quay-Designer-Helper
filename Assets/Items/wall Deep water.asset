@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
+  m_Name: wall Deep water
+  m_EditorClassIdentifier: 
+  Name: Deep Water
+  Description: Deep Water is an isolated place. Only people you allow can enter.
+    A perfect place for group work, or to gossip.
+  Default: {fileID: 21300000, guid: 9110d33e47b4154478defbf3b2e1cf6a, type: 3}
+  Avatar: {fileID: 21300000, guid: e0759217436077d44b9ff235a71e8e1b, type: 3}
+  Sprite: {fileID: 21300000, guid: a4f23baef7a044f4baedda620ffc6688, type: 3}
+  ValueControl: 0
+  ValueExecution: 0
+  ValueThinking: 0
+  ValueResilient: 0

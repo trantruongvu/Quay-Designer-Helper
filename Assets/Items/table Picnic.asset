@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
+  m_Name: table Picnic
+  m_EditorClassIdentifier: 
+  Name: Picnic
+  Description: A red picnic mat on a table, why not?
+  Default: {fileID: 21300000, guid: 517054c61203b824b82a0e3da7b53f9b, type: 3}
+  Avatar: {fileID: 21300000, guid: 9e9ae9f309703844aa920acc18c94070, type: 3}
+  Sprite: {fileID: 21300000, guid: efa73b912b1280046be2881e77ed89aa, type: 3}
+  ValueControl: 0
+  ValueExecution: 0
+  ValueThinking: 0
+  ValueResilient: 0

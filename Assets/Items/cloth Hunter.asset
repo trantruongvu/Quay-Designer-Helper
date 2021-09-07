@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
+  m_Name: cloth Hunter
+  m_EditorClassIdentifier: 
+  Name: Hunter
+  Description: Hunters are flexible. Their motivation is to explore. You like to
+    try out and experiment with new ideas.
+  Default: {fileID: 21300000, guid: 0461504905d8d324e88c54c42198a56b, type: 3}
+  Avatar: {fileID: 21300000, guid: 242bfae76b26c8147b64ca358a8c28c0, type: 3}
+  Sprite: {fileID: 21300000, guid: b0e7ec10fa333e14d93150d895b6c1c0, type: 3}
+  ValueControl: 3
+  ValueExecution: 5
+  ValueThinking: 3
+  ValueResilient: 1

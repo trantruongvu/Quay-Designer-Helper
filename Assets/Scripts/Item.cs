@@ -10,8 +10,8 @@ public class Item : ScriptableObject
     public Sprite Default;
     public Sprite Avatar;
     public Sprite Sprite;
-    public int ValueOrganised;
-    public int ValueKnowledge;
-    public int ValueCreative;
+    public int ValueControl;
+    public int ValueExecution;
+    public int ValueThinking;
     public int ValueResilient;
 }

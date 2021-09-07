@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
+  m_Name: trait Creative
+  m_EditorClassIdentifier: 
+  Name: Creative
+  Description: Creative people constantly have new ideas. You like to bring up unique
+    topics and learn most through practicing.
+  Default: {fileID: 21300000, guid: 2f15f7096a560ae40a992aecf8c78b37, type: 3}
+  Avatar: {fileID: 21300000, guid: f266d39f3dfd8464b941ac39b9ebb76b, type: 3}
+  Sprite: {fileID: 0}
+  ValueControl: 0
+  ValueExecution: 0
+  ValueThinking: 0
+  ValueResilient: 0

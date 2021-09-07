@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: race Elf
   m_EditorClassIdentifier: 
   Name: Elf
-  Description: Long eared creature
+  Description: Elves are enthusiastic and passionate. You almost appear everywhere
+    and always want to test out new ideas.
   Default: {fileID: 21300000, guid: dae18dc92b2bb5c4596eea7d8930e798, type: 3}
   Avatar: {fileID: 21300000, guid: c49f9f78d137969408f35e7aebd88e0e, type: 3}
-  Sprite: {fileID: 0}
-  ValueOrganised: 0
-  ValueKnowledge: 0
-  ValueCreative: 0
-  ValueResilient: 0
+  Sprite: {fileID: 21300000, guid: c6d881734050f454e8182600ec44a2a1, type: 3}
+  ValueControl: 4
+  ValueExecution: 7
+  ValueThinking: 4
+  ValueResilient: 5

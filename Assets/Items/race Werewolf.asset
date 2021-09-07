@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: race Werewolf
   m_EditorClassIdentifier: 
   Name: Werewolf
-  Description: I think this is a Werewolf
+  Description: Werewolves are generally known for their hunting instinct and uncontrollable
+    transformation. You are active and perform better without stressure.
   Default: {fileID: 21300000, guid: 420cb701634cfaa4a938962e2e0ed6af, type: 3}
   Avatar: {fileID: 21300000, guid: 63731c2916ee5064d8fe1a67ef96ac05, type: 3}
-  Sprite: {fileID: 0}
-  ValueOrganised: 0
-  ValueKnowledge: 0
-  ValueCreative: 0
-  ValueResilient: 0
+  Sprite: {fileID: 21300000, guid: e89c087f805236c4087526620719a44b, type: 3}
+  ValueControl: 2
+  ValueExecution: 6
+  ValueThinking: 7
+  ValueResilient: 5

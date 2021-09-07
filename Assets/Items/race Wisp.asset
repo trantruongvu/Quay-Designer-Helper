@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
+  m_Name: race Wisp
+  m_EditorClassIdentifier: 
+  Name: Wisp
+  Description: Wisps are highly disciplined. They always follow steps and rules.
+    Your strength is how you thoroughly understand the principles before proceeding.
+  Default: {fileID: 21300000, guid: ab40050d8e9f52245a63ba0e7d6faeb2, type: 3}
+  Avatar: {fileID: 21300000, guid: 909d8d1cb9cfb5945b63fb83c793181f, type: 3}
+  Sprite: {fileID: 21300000, guid: afb1305db2490974181d71591a105304, type: 3}
+  ValueControl: 6
+  ValueExecution: 6
+  ValueThinking: 6
+  ValueResilient: 2

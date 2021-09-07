@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cc5bc7fa14179b4e9662c7981be4aa6, type: 3}
+  m_Name: wall Night library
+  m_EditorClassIdentifier: 
+  Name: Night Library
+  Description: Night Library is a quiet place. It is filled with hidden knowledge.
+    You occasionally meet people but you are not obligated to socialize.
+  Default: {fileID: 21300000, guid: b428d8a74143f6b4297e204b95e3c55a, type: 3}
+  Avatar: {fileID: 21300000, guid: 457a6fc94d4f7564eaf7a3251989709c, type: 3}
+  Sprite: {fileID: 21300000, guid: 03dbcb0a27ef1314eabd4da0f63a4116, type: 3}
+  ValueControl: 0
+  ValueExecution: 0
+  ValueThinking: 0
+  ValueResilient: 0
