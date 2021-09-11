@@ -15,6 +15,24 @@ MonoBehaviour:
   Name: Human
   Description: Humans are cooperative. They are flexible and could perform any tasks.
     You work best in group work.
+  ProfileInfo: "{0}{0}Humans are cooperative and flexible. You prioritize the community\u2019s
+    benefit and work best in a group. However, when working individually, you are
+    reluctant to show your confusion because you don\u2019t want to bother others.
+    Keep in mind that your friends are supportive and your work will improve faster
+    with your friends' support.  {0}{0}Control: How well you handle multitasking.
+    {0}- You do not hesitate to help others. Therefore, your workloads are usually
+    packed with bonus tasks. Even when you have free time, you tend to spend it with
+    your friends.   {0}{0}Execution: Your interest in creating/refining. {0}- Humans
+    naturally want to fit in. Sometimes you restrain your ability because you don\u2019t
+    want to stand out. Your design can communicate strongly when you are confident
+    with your ideas.   {0}{0}Thinking: Your interest in research/thinking. {0}- You
+    often compare your ideas with your peers. It is good to be competitive to further
+    improve yourself. However, don\u2019t let it put any pressure on you.   {0}{0}Resilient:
+    How fast you recover from stress. {0}- Your energy refills faster when you stay
+    with your friends.   {0}{0}Interaction: How other traits would affect you. {0}-
+    Determined traits like Werewolves, Elves and Mermaid help you be more responsible
+    with your design decisions. {0}- Compassionate traits like Angels and Wisps could
+    help you see how special and capable you are."
   Default: {fileID: 21300000, guid: f81ad562e4289f24a8c55ab248411817, type: 3}
   Avatar: {fileID: 21300000, guid: c2236a3bb8981114ebf4360cced3a353, type: 3}
   Sprite: {fileID: 21300000, guid: bbe4bec80be91e6499afe1b1d0e34e36, type: 3}

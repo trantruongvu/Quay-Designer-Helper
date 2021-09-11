@@ -15,6 +15,26 @@ MonoBehaviour:
   Name: Werewolf
   Description: Werewolves are generally known for their hunting instinct and uncontrollable
     transformation. You are active and perform better without stressure.
+  ProfileInfo: "{0}{0}Werewolves are generally known for their hunting instinct and
+    uncontrollable transformation. You are active and perform better without stressure.
+    You have high energy and can work efficiently but you can\u2019t stand surprised
+    elements. Keep in mind that surprised elements are part of the design process
+    because it opens new topics and opportunities for you to improve. {0}{0}Control:
+    How well you handle multitasking. {0}- Werewolves have low stress tolerance.Your
+    performance is greatly affected when you have to deal with multitasking or under
+    stressful situations. {0}- Some Werewolves choose to work on one thing at a time
+    to control the stressure. {0}{0}Execution: Your interest in creating/refining.
+    {0}- Werewolves like to be active with a bit of carelessness. You work with enthusiasm
+    and always have your tasks done (nearly) on time. {0}- You don\u2019t pay much
+    attention to details as long as the design works as you want. {0}{0}Thinking:
+    Your interest in research/thinking. {0}- You are active in research. You usually
+    keep yourself busy with learning materials. {0}{0}Resilient: How fast you recover
+    from stress. {0}- When it comes to self learning you can handle it well. You
+    work and rest whenever you want to, making you fairly efficient without burning
+    out. {0}{0}Interaction: How other traits would affect you. {0}- You can learn
+    how to live with confusion well with flexible traits like Elves, Angels and Mermaids.
+    {0}- Selfless traits like Wisps and Humans could help you pay more attention
+    to details of your design."
   Default: {fileID: 21300000, guid: 420cb701634cfaa4a938962e2e0ed6af, type: 3}
   Avatar: {fileID: 21300000, guid: 63731c2916ee5064d8fe1a67ef96ac05, type: 3}
   Sprite: {fileID: 21300000, guid: e89c087f805236c4087526620719a44b, type: 3}

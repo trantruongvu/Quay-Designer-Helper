@@ -15,10 +15,12 @@ MonoBehaviour:
   Name: Night Library
   Description: Night Library is a quiet place. It is filled with hidden knowledge.
     You occasionally meet people but you are not obligated to socialize.
+  ProfileInfo: '{0}{0}- You like quiet places like the Night Library. You occasionally
+    meet people but you are not obligated to socialize.'
   Default: {fileID: 21300000, guid: b428d8a74143f6b4297e204b95e3c55a, type: 3}
   Avatar: {fileID: 21300000, guid: 457a6fc94d4f7564eaf7a3251989709c, type: 3}
   Sprite: {fileID: 21300000, guid: 03dbcb0a27ef1314eabd4da0f63a4116, type: 3}
   ValueControl: 0
-  ValueExecution: 0
-  ValueThinking: 0
-  ValueResilient: 0
+  ValueExecution: 4
+  ValueThinking: 2
+  ValueResilient: 2

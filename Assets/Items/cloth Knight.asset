@@ -15,6 +15,8 @@ MonoBehaviour:
   Name: Knight
   Description: Knights are efficient. Their motivation is to follow orders. You prefer
     a simple but effective solution.
+  ProfileInfo: '{0}{0}- You are efficient. Your motivation is to follow orders. You
+    prefer a simple but effective solution.'
   Default: {fileID: 21300000, guid: fb86ffd10d0ac0d448816324cfd56eef, type: 3}
   Avatar: {fileID: 21300000, guid: 6c4297dac6d022b4b9f92c68af33e54d, type: 3}
   Sprite: {fileID: 21300000, guid: 9b0ebb63641982f4490581f9050adcd7, type: 3}

@@ -15,6 +15,9 @@ MonoBehaviour:
   Name: Banh Mi
   Description: You need Banh Mi to refill your energy. However, after eating it,
     you feel sleepy and take a (long) nap.
+  ProfileInfo: '{0}{0}- Like how you eat Banh Mi while walking. You are constantly
+    changing your taks. You like to make the work rather than spend time thinking
+    about the meaning of it.'
   Default: {fileID: 21300000, guid: 1e75b93bd0f60e740a95536fbf646f1b, type: 3}
   Avatar: {fileID: 21300000, guid: 8f6af42fe95d9954ba178ae2a5ea9f0c, type: 3}
   Sprite: {fileID: 21300000, guid: 619c294368defea418dcee1777fa2eec, type: 3}

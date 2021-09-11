@@ -14,10 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Plain
   Description: You like to keep things simple.
+  ProfileInfo: "{0}{0}- You don\u2019t care much about your workspace. You are satisfied
+    as long as that space provides what you need."
   Default: {fileID: 21300000, guid: f77861c581cb8f842b6b2d6985f14607, type: 3}
   Avatar: {fileID: 21300000, guid: b40c27e6449c37747b812784c952bc4e, type: 3}
   Sprite: {fileID: 21300000, guid: 4bc5dd35f8d0fc44b8b395a9d608b553, type: 3}
-  ValueControl: 0
-  ValueExecution: 0
-  ValueThinking: 0
+  ValueControl: 4
+  ValueExecution: 2
+  ValueThinking: 2
   ValueResilient: 0

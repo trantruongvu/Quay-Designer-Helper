@@ -15,6 +15,24 @@ MonoBehaviour:
   Name: Elf
   Description: Elves are enthusiastic and passionate. You almost appear everywhere
     and always want to test out new ideas.
+  ProfileInfo: "{0}{0}Elves are enthusiastic and passionate. You almost appear everywhere
+    and always want to test out new ideas. You have constant fear that you are not
+    good enough, therefore, you always try your hardest to improve. Keep in mind
+    that as a designer, every characteristic is appreciated and you are very special.  
+    {0}{0}Control: How well you handle multitasking. {0}- You are highly adaptive.
+    Even though you don\u2019t enjoy making plans, you make it up with creative improvisation.  
+    {0}{0}Execution: Your interest in creating/refining. {0}- Elves are natural artists.
+    You enjoy making your surroundings fit in your aesthetic taste. {0}- Your design
+    decisions are strong and unique.   {0}{0}Thinking: Your interest in research/thinking.
+    {0}- You learn faster through practical experiences. Therefore, you spend less
+    time thinking than experiencing first hand.   {0}{0}Resilient: How fast you recover
+    from stress. {0}- Because of your enthusiasm, you treat your workplace as a playground.
+    {0}- Sometimes when you are too playful it appears to others that you are not
+    serious enough. But that\u2019s okay because you can live however you want.  
+    {0}{0}Interaction: How other traits would affect you. {0}- Careful traits like
+    Wisps, Humans and Mermaids could help you plan your steps more carefully and
+    avoid unnecessary problems. {0}- Joy seeking traits like Werewolves and Angels
+    would brainstorm some more crazy ideas with you."
   Default: {fileID: 21300000, guid: dae18dc92b2bb5c4596eea7d8930e798, type: 3}
   Avatar: {fileID: 21300000, guid: c49f9f78d137969408f35e7aebd88e0e, type: 3}
   Sprite: {fileID: 21300000, guid: c6d881734050f454e8182600ec44a2a1, type: 3}

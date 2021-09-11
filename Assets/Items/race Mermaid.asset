@@ -15,6 +15,22 @@ MonoBehaviour:
   Name: Mermaid
   Description: Mermaids are natural hunters. You aim for achievement and have specific
     plans to visualize it.
+  ProfileInfo: "{0}{0}Mermaids are natural hunters. You aim for achievement and have
+    specific plans to visualize it. To achieve your goals you usually pick the most
+    optimised path and avoid troubles. However, with mistakes we can improve not
+    only our designs but also our sympathy for others. {0}{0}Control: How well you
+    handle multitasking. {0}- Mermaids are natural achievers. You always pay attention
+    to the requirements and carefully plan out necessary steps to achieve it.   {0}{0}Execution:
+    Your interest in creating/refining. {0}- You are confident and an idealist. You
+    pay close attention to details and most of your designs communicate strongly.  
+    {0}{0}Thinking: Your interest in research/thinking. {0}- Mermaids usually don\u2019t
+    change their hunting plans. You want to focus on the objectives and avoid tasks
+    you think are unnecessary.   {0}{0}Resilient: How fast you recover from stress.
+    {0}- One of your strengths is that you can work fairly efficiently on the job
+    whether you like it or not.   {0}{0}Interaction: How other traits would affect
+    you. {0}- Impatient traits like Werewolves, Angels and Elves could share their
+    unique experiences with you. {0}- Caring traits like Wisps and Humans could help
+    your design be more approachable for the users."
   Default: {fileID: 21300000, guid: 4f3a703c271d64d4791418221ff08d57, type: 3}
   Avatar: {fileID: 21300000, guid: 283b94eefed209c43a5e2c2a2121a596, type: 3}
   Sprite: {fileID: 21300000, guid: 2d5a0196fe92ae341b3d08fe65794942, type: 3}

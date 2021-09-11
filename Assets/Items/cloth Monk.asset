@@ -15,6 +15,8 @@ MonoBehaviour:
   Name: Monk
   Description: Monks are persistent. Their motivation is to be balanced. You are
     highly aware of the situation and can follow a plan steadily.
+  ProfileInfo: '{0}{0}- You are persistent. Your motivation is to be balanced. You
+    are highly aware of the situation and can follow a plan steadily.'
   Default: {fileID: 21300000, guid: 0f124132952c3a045b8bf918d39d2482, type: 3}
   Avatar: {fileID: 21300000, guid: 624611757600a8e409524e87d11f6aaa, type: 3}
   Sprite: {fileID: 21300000, guid: 0e4c3ce469d47a84f9f2f8a977387bd3, type: 3}

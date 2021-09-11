@@ -47,22 +47,29 @@ public class CharacterManager : MonoBehaviour
     // Items
     List<ItemScript> _races;
     public List<Item> races;
-    private Item race;
+    [HideInInspector] public Item race;
     List<ItemScript> _traits;
     public List<Item> traits;
-    private Item trait;
+    [HideInInspector] public Item trait;
     List<ItemScript> _clothes;
     public List<Item> clothes;
-    private Item cloth;
+    [HideInInspector] public Item cloth;
     List<ItemScript> _hobbies;
     public List<Item> hobbies;
-    private Item hobby;
+    [HideInInspector] public Item hobby;
     List<ItemScript> _tables;
     public List<Item> tables;
-    private Item table;
+    [HideInInspector] public Item table;
     List<ItemScript> _walls;
     public List<Item> walls;
-    private Item wall;
+    [HideInInspector] public Item wall;
+
+    // Values
+    [HideInInspector] public int valueControl;
+    [HideInInspector] public int valueExecution;
+    [HideInInspector] public int valueThinking;
+    [HideInInspector] public int valueResilient;
+
 
     // Buttons
     public Button btnPrev;
@@ -363,6 +370,16 @@ public class CharacterManager : MonoBehaviour
         imgHobby.sprite = hobby.Sprite;
         imgTable.sprite = table.Sprite;
         imgWall.sprite = wall.Sprite;
+
+        valueControl = race.ValueControl + cloth.ValueControl + hobby.ValueControl + table.ValueControl + wall.ValueControl;
+        valueExecution = race.ValueExecution + cloth.ValueExecution + hobby.ValueExecution + table.ValueExecution + wall.ValueExecution;
+        valueThinking = race.ValueThinking + cloth.ValueThinking + hobby.ValueThinking + table.ValueThinking + wall.ValueThinking;
+        valueResilient = race.ValueResilient + cloth.ValueResilient + hobby.ValueResilient + table.ValueResilient + wall.ValueResilient;
+
+        //Debug.Log("valueControl : " + valueControl);
+        //Debug.Log("valueExecution : " + valueExecution);
+        //Debug.Log("valueThinking : " + valueThinking);
+        //Debug.Log("valueResilient : " + valueResilient);
     }
 
     public void ResetCharacter()

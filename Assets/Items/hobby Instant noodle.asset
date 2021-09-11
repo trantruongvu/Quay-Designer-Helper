@@ -15,6 +15,9 @@ MonoBehaviour:
   Name: Instant Noodle
   Description: "It\u2019s late and there\u2019s nothing left in the kitchen. You
     make yourself a bowl of Instant Noodle after submitting your work near the deadline."
+  ProfileInfo: "{0}{0}- You are usually laid back. You like to enjoy yourself first
+    and have your tasks done later. It usually results in staying up all night when
+    it\u2019s near the deadlines."
   Default: {fileID: 21300000, guid: 66a0dda445bdab248b33bb407b2f1db5, type: 3}
   Avatar: {fileID: 21300000, guid: bb547a8e1c9f1654dbc5731d17b98f0d, type: 3}
   Sprite: {fileID: 21300000, guid: 9977aadc3e530814f9a40aa1c72381ef, type: 3}

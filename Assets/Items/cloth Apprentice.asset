@@ -15,6 +15,8 @@ MonoBehaviour:
   Name: Apprentice
   Description: Apprentices are curious. Their motivation is to learn more. You want
     to understand and spend most of your time exploring new ideas.
+  ProfileInfo: '{0}{0}- You are curious. Your motivation is to learn more. You want
+    to understand and spend most of your time exploring new ideas.'
   Default: {fileID: 21300000, guid: 4801f1d1f1cfcd648b7cb1388544cb32, type: 3}
   Avatar: {fileID: 21300000, guid: 60333f8d0c6a03c4980daa9b7b64e6af, type: 3}
   Sprite: {fileID: 21300000, guid: d047d5e873969da48aece93d7eef753f, type: 3}

@@ -16,10 +16,12 @@ MonoBehaviour:
   Description: "Flower Hill is an outdoor place. You can actually feel the wind slightly
     move your hair. It\u2019s good to go outside and take a deep breath once in a
     while."
+  ProfileInfo: '{0}{0}- You are active and enjoy a natural environment like Flower
+    Hill. Natural sounds keep you focused.'
   Default: {fileID: 21300000, guid: 5e0ce123a10f32c42a35b4a3e598b321, type: 3}
   Avatar: {fileID: 21300000, guid: 123654c7684a13344b2cc59392299005, type: 3}
   Sprite: {fileID: 21300000, guid: fe593b9928d70894c85ce20e856b04a3, type: 3}
   ValueControl: 0
   ValueExecution: 0
-  ValueThinking: 0
-  ValueResilient: 0
+  ValueThinking: 2
+  ValueResilient: 6
