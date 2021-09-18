@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Elegant
   Description: Your working space is tidy and classic.
-  ProfileInfo: '{0}{0}- You are responsible. You always keep your workspace clean
-    and tidy.'
+  ProfileInfo: '{0}- You are responsible. You always keep your workspace clean and
+    tidy.'
   Default: {fileID: 21300000, guid: 05ff7b97278b14a488f2af68453de36b, type: 3}
   Avatar: {fileID: 21300000, guid: 5ea5fb7ed2e246d48bffbd33894aebaf, type: 3}
   Sprite: {fileID: 21300000, guid: 3619d19b468d9ae4eb4d24c5ea7965e6, type: 3}

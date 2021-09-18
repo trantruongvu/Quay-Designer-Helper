@@ -15,18 +15,18 @@ MonoBehaviour:
   Name: Angel
   Description: Angels are known for their friendly nature and enjoy helping others.
     You work best when you have companions.
-  ProfileInfo: '{0}{0}Angels are known for their friendly nature and enjoy helping
-    others. You work best when you have companions. Most Angels want to enjoy their
-    life as much as possible. You want your design to be interesting but you are
-    not persistent with the design process. Keep in mind that mundane tasks are also
-    necessary for a good design.   {0}{0}Control: How well you handle multitasking.
-    {0}- Angels are flexible and can balance their lives with elements of joy. You
-    always find a way to make your workflow interesting.   {0}{0}Execution: Your
-    interest in creating/refining. {0}- You like to visualize your ideas quickly.
-    However, you often find new or more interesting ideas before finishing the current
-    one.   {0}{0}Thinking: Your interest in research/thinking. {0}- Angels are natural
-    dreamers. You have a very unique aesthetic in your mind and spend a lot of time
-    trying to understand it. However, your approach is usually wishful.   {0}{0}Resilient:
+  ProfileInfo: '{0}Angels are known for their friendly nature and enjoy helping others.
+    You work best when you have companions. Most Angels want to enjoy their life
+    as much as possible. You want your design to be interesting but you are not persistent
+    with the design process. Keep in mind that mundane tasks are also necessary for
+    a good design.   {0}{0}Control: How well you handle multitasking. {0}- Angels
+    are flexible and can balance their lives with elements of joy. You always find
+    a way to make your workflow interesting.   {0}{0}Execution: Your interest in
+    creating/refining. {0}- You like to visualize your ideas quickly. However, you
+    often find new or more interesting ideas before finishing the current one.  
+    {0}{0}Thinking: Your interest in research/thinking. {0}- Angels are natural dreamers.
+    You have a very unique aesthetic in your mind and spend a lot of time trying
+    to understand it. However, your approach is usually wishful.   {0}{0}Resilient:
     How fast you recover from stress. {0}- Angels usually have high stress tolerance.
     You always come up with ideas to make things comfortable, partly to ignore the
     hassles or responsibility. However, hassles are a part of life, you will have

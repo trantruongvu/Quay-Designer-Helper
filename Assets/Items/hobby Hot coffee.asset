@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Hot Coffee
   Description: 'Hot Coffee helps stay focused. You keep hot coffee to keep yourself
     busy. '
-  ProfileInfo: '{0}{0}- You are always focused, but not energetic. You like to keep
+  ProfileInfo: '{0}- You are always focused, but not energetic. You like to keep
     yourself busy either with academic work or personal work.'
   Default: {fileID: 21300000, guid: 98e055d12d3dea14e9710d5188e03b47, type: 3}
   Avatar: {fileID: 21300000, guid: 6b11adaedf8600a47a930b417990c19d, type: 3}

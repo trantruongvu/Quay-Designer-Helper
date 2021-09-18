@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Hunter
   Description: Hunters are flexible. Their motivation is to explore. You like to
     try out and experiment with new ideas.
-  ProfileInfo: '{0}{0}- You are flexible. Your motivation is to explore. You like
-    to try out and experiment with new ideas.'
+  ProfileInfo: '{0}- You are flexible. Your motivation is to explore. You like to
+    try out and experiment with new ideas.'
   Default: {fileID: 21300000, guid: 0461504905d8d324e88c54c42198a56b, type: 3}
   Avatar: {fileID: 21300000, guid: 242bfae76b26c8147b64ca358a8c28c0, type: 3}
   Sprite: {fileID: 21300000, guid: b0e7ec10fa333e14d93150d895b6c1c0, type: 3}

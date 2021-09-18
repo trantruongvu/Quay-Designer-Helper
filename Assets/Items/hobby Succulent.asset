@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Succulent
   Description: Nothing special. Just a decoration to keep you sane.
-  ProfileInfo: '{0}{0}- Even though you are expressive in public, your hobbies are
-    quite soft. You like to take care of small things and there is a high chance
-    you have a hamster pet.'
+  ProfileInfo: '{0}- Even though you are expressive in public, your hobbies are quite
+    soft. You like to take care of small things and there is a high chance you have
+    a hamster pet.'
   Default: {fileID: 21300000, guid: 0da935fde57c6cb4ebd6a65989a8c5fc, type: 3}
   Avatar: {fileID: 21300000, guid: ee3da774005120a46ac103a37d37970e, type: 3}
   Sprite: {fileID: 21300000, guid: f9a3c33bc75b4bf41b3bd6a7e919826b, type: 3}

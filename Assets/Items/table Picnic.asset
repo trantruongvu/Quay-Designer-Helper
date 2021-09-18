@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Picnic
   Description: A red picnic mat on a table, why not?
-  ProfileInfo: '{0}{0}- You are expressive and sociable. You like to have your friends
+  ProfileInfo: '{0}- You are expressive and sociable. You like to have your friends
     study with you.'
   Default: {fileID: 21300000, guid: 517054c61203b824b82a0e3da7b53f9b, type: 3}
   Avatar: {fileID: 21300000, guid: 9e9ae9f309703844aa920acc18c94070, type: 3}

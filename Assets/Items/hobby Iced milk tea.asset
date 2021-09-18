@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Iced Milk Tea
   Description: You ordered Iced Milk Tea with extra boba. Now you have things to
     chew while watching memes.
-  ProfileInfo: '{0}{0}- You always feel like burning out and not achieving enough.
-    Milk Tea helps you keep your mind together and be sane.'
+  ProfileInfo: '{0}- You always feel like burning out and not achieving enough. Milk
+    Tea helps you keep your mind together and be sane.'
   Default: {fileID: 21300000, guid: 32d7561f3066525489ad6936d0e25df3, type: 3}
   Avatar: {fileID: 21300000, guid: cf1be7a9c6e50994bb1e93cd70e88dd2, type: 3}
   Sprite: {fileID: 21300000, guid: 2c688231b60af4447819f67c349b3ed1, type: 3}

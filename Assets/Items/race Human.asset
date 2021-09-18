@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Human
   Description: Humans are cooperative. They are flexible and could perform any tasks.
     You work best in group work.
-  ProfileInfo: "{0}{0}Humans are cooperative and flexible. You prioritize the community\u2019s
+  ProfileInfo: "{0}Humans are cooperative and flexible. You prioritize the community\u2019s
     benefit and work best in a group. However, when working individually, you are
     reluctant to show your confusion because you don\u2019t want to bother others.
     Keep in mind that your friends are supportive and your work will improve faster

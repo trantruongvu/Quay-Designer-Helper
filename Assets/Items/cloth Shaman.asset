@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Shaman
   Description: Shamans are assertive. Their motivation is to take control. You want
     to provide a win-win solution that you think is best for others.
-  ProfileInfo: '{0}{0}- You are assertive. Your motivation is to take control. You
-    want to provide a win-win solution that you think is best for others.'
+  ProfileInfo: '{0}- You are assertive. Your motivation is to take control. You want
+    to provide a win-win solution that you think is best for others.'
   Default: {fileID: 21300000, guid: 0003b52c833a7fe4586f6b0678fefcfa, type: 3}
   Avatar: {fileID: 21300000, guid: c294659c704f22641bbe08f105a4e01f, type: 3}
   Sprite: {fileID: 21300000, guid: 216368639de1d654db5315d389bc9c85, type: 3}
