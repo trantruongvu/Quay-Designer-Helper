@@ -9,11 +9,12 @@ public class GolemManager : MonoBehaviour
     IdleTalk idleTalk;
 
     List<CoolTalk> coolTalks;
-    CoolTalk coolTalk;
-    int count = 0;
+    //CoolTalk coolTalk;
+    int coolCount = 0;
 
     List<PlanTalk> planTalks;
-    PlanTalk planTalk;
+    //PlanTalk planTalk;
+    int planCount = 0;
 
     [Header("Talk buttons")]
     public Button btnIdle;
@@ -237,10 +238,10 @@ public class GolemManager : MonoBehaviour
         btnCool.gameObject.SetActive(false);
         btnPlan.gameObject.SetActive(false);
 
-        if (count >= coolTalks.Count)
-            count = 0;
-        coolTalk = coolTalks[count];
-        count++;
+        if (coolCount >= coolTalks.Count)
+            coolCount = 0;
+        CoolTalk coolTalk = coolTalks[coolCount];
+        coolCount++;
 
         btnNext.gameObject.SetActive(true);
 
@@ -275,7 +276,126 @@ public class GolemManager : MonoBehaviour
 
     public void StartPlanTalk()
     {
+        btnIdle.gameObject.SetActive(false);
+        btnCool.gameObject.SetActive(false);
+        btnPlan.gameObject.SetActive(false);
 
+        if (planCount >= planTalks.Count)
+            planCount = 0;
+        PlanTalk planTalk = planTalks[planCount];
+        planCount++;
+
+        btnNext.gameObject.SetActive(true);
+
+        // start 1
+        imgHead.sprite = neutral;
+        txtGolem.text = planTalk.start1;
+
+        btnNext.onClick.RemoveAllListeners();
+        btnNext.onClick.AddListener(() =>
+        {
+            // start 2
+            imgHead.sprite = neutral;
+            txtGolem.text = planTalk.start2;
+
+            // Button
+            btnNo.gameObject.SetActive(true);
+            btnYes.gameObject.SetActive(true);
+
+            // No 1 - sad
+            btnNo.onClick.RemoveAllListeners();
+            btnNo.onClick.AddListener(() =>
+            {
+                btnNo.gameObject.SetActive(false);
+                btnYes.gameObject.SetActive(false);
+
+                imgHead.sprite = sad;
+                txtGolem.text = planTalk.startNo1;
+
+                // No 2 - sad
+                btnNext.onClick.RemoveAllListeners();
+                btnNext.onClick.AddListener(() =>
+                {
+                    imgHead.sprite = sad;
+                    txtGolem.text = planTalk.startNo2;
+
+                    // End 1 - happy
+                    btnNext.onClick.RemoveAllListeners();
+                    btnNext.onClick.AddListener(() =>
+                    {
+                        imgHead.sprite = happy;
+                        txtGolem.text = planTalk.endNo1;
+
+                        // End 2 - happy
+                        btnNext.onClick.RemoveAllListeners();
+                        btnNext.onClick.AddListener(() =>
+                        {
+                            imgHead.sprite = happy;
+                            txtGolem.text = planTalk.endNo2;
+
+                            // Back
+                            btnNext.onClick.RemoveAllListeners();
+                            btnNext.onClick.AddListener(() =>
+                            {
+                                btnIdle.gameObject.SetActive(true);
+                                btnCool.gameObject.SetActive(true);
+                                btnPlan.gameObject.SetActive(true);
+
+                                imgHead.sprite = neutral;
+                                txtGolem.text = txtDefault;
+                            });
+                        });
+                    });
+                });
+            });
+
+            // Yes 1 - happy
+            btnYes.onClick.RemoveAllListeners();
+            btnYes.onClick.AddListener(() =>
+            {
+                btnNo.gameObject.SetActive(false);
+                btnYes.gameObject.SetActive(false);
+
+                imgHead.sprite = happy;
+                txtGolem.text = planTalk.startYes1;
+
+                // Yes 2 - happy
+                btnNext.onClick.RemoveAllListeners();
+                btnNext.onClick.AddListener(() =>
+                {
+                    imgHead.sprite = happy;
+                    txtGolem.text = planTalk.startYes2;
+
+                    // End 1 - neutral
+                    btnNext.onClick.RemoveAllListeners();
+                    btnNext.onClick.AddListener(() =>
+                    {
+                        imgHead.sprite = neutral;
+                        txtGolem.text = planTalk.endYes1;
+
+                        // End 2 - neutral
+                        btnNext.onClick.RemoveAllListeners();
+                        btnNext.onClick.AddListener(() =>
+                        {
+                            imgHead.sprite = neutral;
+                            txtGolem.text = planTalk.endYes2;
+
+                            // Back
+                            btnNext.onClick.RemoveAllListeners();
+                            btnNext.onClick.AddListener(() =>
+                            {
+                                btnIdle.gameObject.SetActive(true);
+                                btnCool.gameObject.SetActive(true);
+                                btnPlan.gameObject.SetActive(true);
+
+                                imgHead.sprite = neutral;
+                                txtGolem.text = txtDefault;
+                            });
+                        });
+                    });
+                });
+            });
+        });
     }
 }
 
