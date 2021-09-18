@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ProfileManager : MonoBehaviour
 {
+    public static ProfileManager Instance;
     CharacterManager character;
 
     public Image profileWall;
@@ -20,6 +21,11 @@ public class ProfileManager : MonoBehaviour
     public Transform profileResilient;
 
     public TextMeshProUGUI profileText;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {

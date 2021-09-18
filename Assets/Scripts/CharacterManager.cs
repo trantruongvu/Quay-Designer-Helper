@@ -16,6 +16,7 @@ public class CharacterManager : MonoBehaviour
     public TextMeshProUGUI txtCharacterInfo;
 
     // Panels
+    [Header("Panels")]
     public GameObject panelRace;
     public GameObject panelTrait;
     public GameObject panelCloth;
@@ -24,9 +25,11 @@ public class CharacterManager : MonoBehaviour
     public GameObject panelHobby;
 
     // Item Prefab
+    [Header("Item Prefab")]
     public ItemScript itemPrefab;
 
     // Contents
+    [Header("Contents")]
     private Transform contentRace;
     private Transform contentTrait;
     private Transform contentCloth;
@@ -34,10 +37,25 @@ public class CharacterManager : MonoBehaviour
     private Transform contentTable;
     private Transform contentWall;
 
+    // Wardrobe
+    [Header("Wardrobe")]
+    public Transform wcontentRace;
+    public Transform wcontentTrait;
+    public Transform wcontentHobby;
+    public Transform wcontentCloth;
+    public Transform wcontentWall;
+    public Transform wcontentTable;
+
+    public Transform wvaluewvalueControl;
+    public Transform wvalueExecution;
+    public Transform wvalueThinking;
+    public Transform wvalueResilient;
+
     // Seperate Line 
     public Transform lineBottom;
 
     // Images
+    [Header("Avatar Images")]
     public Image imgRace;
     public Image imgCloth;
     public Image imgHobby;
@@ -45,6 +63,7 @@ public class CharacterManager : MonoBehaviour
     public Image imgWall;
 
     // Items
+    [Header("List items")]
     List<ItemScript> _races;
     public List<Item> races;
     [HideInInspector] public Item race;
@@ -72,8 +91,15 @@ public class CharacterManager : MonoBehaviour
 
 
     // Buttons
+    [Header("UI buttons")]
     public Button btnPrev;
     public Button btnNext;
+    public Button btnChoose;
+
+    [Header("Img Info")]
+    public GameObject imgInfo;
+    public Text txtName;
+    public Text txtDescription;
 
     private void Awake()
     {
@@ -95,6 +121,13 @@ public class CharacterManager : MonoBehaviour
         contentTable = panelTable.transform.GetChild(0);
         contentWall = panelWall.transform.GetChild(0);
         contentHobby = panelHobby.transform.GetChild(0);
+
+        SpawnItemsWardrobe(races, wcontentRace);
+        SpawnItemsWardrobe(traits, wcontentTrait);
+        SpawnItemsWardrobe(clothes, wcontentCloth);
+        SpawnItemsWardrobe(hobbies, wcontentHobby);
+        SpawnItemsWardrobe(tables, wcontentTable);
+        SpawnItemsWardrobe(walls, wcontentWall);
 
         DisplayChooseRace(true);
     }
@@ -355,6 +388,87 @@ public class CharacterManager : MonoBehaviour
         }
     }
 
+    private void SpawnItemsWardrobe(List<Item> items, Transform parent)
+    {
+        if (parent.childCount > 0)
+            return;
+
+        foreach (Item item in items)
+        {
+            ItemScript newItem = Instantiate(itemPrefab, parent);
+            newItem.image.sprite = item.Avatar;
+            newItem.btnChoose.onClick.AddListener(() =>
+            {
+                btnChoose.onClick.RemoveAllListeners();
+
+                imgInfo.SetActive(true);
+                txtName.text = item.Name;
+                txtDescription.text = item.Description;
+
+                if (parent == wcontentRace)
+                {
+                    btnChoose.onClick.AddListener(() =>
+                    {
+                        imgInfo.SetActive(false);
+                        race = item;
+                        GetCharacter();
+                    });
+                }
+                else if (parent == wcontentTrait)
+                {
+                    btnChoose.onClick.AddListener(() =>
+                    {
+                        imgInfo.SetActive(false);
+                        trait = item;
+                        GetCharacter();
+                    });
+                }
+                else if (parent == wcontentWall)
+                {
+                    btnChoose.onClick.AddListener(() =>
+                    {
+                        imgInfo.SetActive(false);
+                        wall = item;
+                        GetCharacter();
+                    });
+                }
+                else if (parent == wcontentTable)
+                {
+                    btnChoose.onClick.AddListener(() =>
+                    {
+                        imgInfo.SetActive(false);
+                        table = item;
+                        GetCharacter();
+                    });
+                }
+                else if (parent == wcontentCloth)
+                {
+                    btnChoose.onClick.AddListener(() =>
+                    {
+                        imgInfo.SetActive(false);
+                        cloth = item;
+                        GetCharacter();
+                    });
+                }
+                else if (parent == wcontentHobby)
+                {
+                    btnChoose.onClick.AddListener(() =>
+                    {
+                        imgInfo.SetActive(false);
+                        hobby = item;
+                        GetCharacter();
+                    });
+                }
+            });
+
+            //if (parent == wcontentRace) { _races.Add(newItem); }
+            //else if (parent == wcontentTrait) { _traits.Add(newItem); }
+            //else if (parent == wcontentWall) { _walls.Add(newItem); }
+            //else if (parent == wcontentTable) { _tables.Add(newItem); }
+            //else if (parent == wcontentCloth) { _clothes.Add(newItem); }
+            //else if (parent == wcontentHobby) { _hobbies.Add(newItem); }
+        }
+    }
 
     public void DisplayCharacter(bool status)
     {
@@ -376,10 +490,10 @@ public class CharacterManager : MonoBehaviour
         valueThinking = race.ValueThinking + cloth.ValueThinking + hobby.ValueThinking + table.ValueThinking + wall.ValueThinking;
         valueResilient = race.ValueResilient + cloth.ValueResilient + hobby.ValueResilient + table.ValueResilient + wall.ValueResilient;
 
-        //Debug.Log("valueControl : " + valueControl);
-        //Debug.Log("valueExecution : " + valueExecution);
-        //Debug.Log("valueThinking : " + valueThinking);
-        //Debug.Log("valueResilient : " + valueResilient);
+        wvaluewvalueControl.localScale = new Vector3(Mathf.Clamp(valueControl / 20f, 0f, 1f), 1, 1);
+        wvalueExecution.localScale = new Vector3(Mathf.Clamp(valueExecution / 20f, 0f, 1f), 1, 1);
+        wvalueThinking.localScale = new Vector3(Mathf.Clamp(valueThinking / 20f, 0f, 1f), 1, 1);
+        wvalueResilient.localScale = new Vector3(Mathf.Clamp(valueResilient / 20f, 0f, 1f), 1, 1);
     }
 
     public void ResetCharacter()
