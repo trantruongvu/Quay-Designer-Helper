@@ -47,86 +47,64 @@ public class ProfileManager : MonoBehaviour
 
         // Race
         profileText.text += string.Format(character.race.ProfileInfo, '\n');
+        //Debug.Log("race: " + character.race.Name);
+        //Debug.Log("trait: " + character.trait.Name);
 
         // Trait
-        if (character.race.name.Equals("Werewolf"))
-            switch (character.trait.name)
-            {
-                case "Rational":
-                    profileText.text += "\n- Werewolves are inherently emotional, even with rational characteristics. You tend to focus on the motive of other people, or the story of the design.";
-                    break;
-                case "Creative":
-                    profileText.text += "\n- Werewolves are active. A creative Werewolf like you is bold. To take your idea further, you are not afraid of repeating the design process.";
-                    break;
-                case "Emotional":
-                    profileText.text += "\n- You pay attention to other people’s feelings and show constant concern of ethnicity in your design. Some emotional Werewolves easily show strong compassion for fictional characters.";
-                    break;
-            }
-        else if (character.race.name.Equals("Angel"))
-            switch (character.trait.name)
-            {
-                case "Rational":
-                    profileText.text += "- Rational Angels are sometimes assertive. Because you are used to reading the environment, you know how to control the atmosphere.";
-                    break;
-                case "Creative":
-                    profileText.text += "- The status of Angels rely on their companions. You are naturally playful and your boldness is multiplied when you are with your friends.";
-                    break;
-                case "Emotional":
-                    profileText.text += "- You usually prioritize the tasks based on your interest. The results are usually so expressive that other people can tell if you like it or not during the design process.";
-                    break;
-            }
-        else if (character.race.name.Equals("Wisp"))
-            switch (character.trait.name)
-            {
-                case "Rational":
-                    profileText.text += "- Wisps tend to please others rather than themself, therefore, they are often worn out. However, a rational Wisp like you can distinguish the border of responsibility and avoid being led by others.";
-                    break;
-                case "Creative":
-                    profileText.text += "- You are more active than other Wisps. Not only follow the instruction, you also find ways to improve it.";
-                    break;
-                case "Emotional":
-                    profileText.text += "- You are innocent and passionate. Your enthusiasm when supporting others puts a smile on their faces.";
-                    break;
-            }
-        else if (character.race.name.Equals("Elf"))
-            switch (character.trait.name)
-            {
-                case "Rational":
-                    profileText.text += "- When developing new ideas, you focus on their functionality and practical aspects. You tend to set a goal for each task to make sure each step you took was executed well.";
-                    break;
-                case "Creative":
-                    profileText.text += "- Elf are naturally playful. A creative Elf like you is usually a workaholic. You have a list of things you want to do and it never stops expanding.";
-                    break;
-                case "Emotional":
-                    profileText.text += "- You easily feel passionate. You constantly inspire others through your design. Sometimes you put too much emotion in negative feedback that it affects your motivation.";
-                    break;
-            }
-        else if (character.race.name.Equals("Human"))
-            switch (character.trait.name)
-            {
-                case "Rational":
-                    profileText.text += "- Humans are usually not self motivated. Rational Humans like you usually work better under pressure.";
-                    break;
-                case "Creative":
-                    profileText.text += "- Humans have wide connections. You can see potential in other people and want to improve with them.";
-                    break;
-                case "Emotional":
-                    profileText.text += "- You usually keep the ideas to yourself because you don’t want to take other people's chances to express themself. Keep in mind that sometimes you could be selfish because the people you care about also care about you.";
-                    break;
-            }
-        else if (character.race.name.Equals("Mermaid"))
-            switch (character.trait.name)
-            {
-                case "Rational":
-                    profileText.text += "- Mermaids are born rational, which makes rational Mermaids perfectionists. You value the learning outcomes and foresee how to achieve it.";
-                    break;
-                case "Creative":
-                    profileText.text += "- You are bold. You are not stressed out about the design outcome because you are confident and only want to express yourself through design.";
-                    break;
-                case "Emotional":
-                    profileText.text += "- You are expressive and supportive. You like to have a competitive companion to constantly improve each other.";
-                    break;
-            }
+        if (character.race.Name.Equals("Werewolf"))
+        {
+            if (character.trait.Name.Equals("Rational"))
+                profileText.text += "\n\n- Werewolves are inherently emotional, even with rational characteristics. You tend to focus on the motive of other people, or the story of the design.";
+            else if (character.trait.Name.Equals("Creative"))
+                profileText.text += "\n\n- Werewolves are active. A creative Werewolf like you is bold. To take your idea further, you are not afraid of repeating the design process.";
+            else if (character.trait.Name.Equals("Emotional"))
+                profileText.text += "\n\n- You pay attention to other people’s feelings and show constant concern of ethnicity in your design. Some emotional Werewolves easily show strong compassion for fictional characters.";
+        }
+        else if (character.race.Name.Equals("Angel"))
+        {
+            if (character.trait.Name.Equals("Rational"))
+                profileText.text += "\n\n- Rational Angels are sometimes assertive. Because you are used to reading the environment, you know how to control the atmosphere.";
+            else if (character.trait.Name.Equals("Creative"))
+                profileText.text += "\n\n- The status of Angels rely on their companions. You are naturally playful and your boldness is multiplied when you are with your friends.";
+            else if (character.trait.Name.Equals("Emotional"))
+                profileText.text += "\n\n- You usually prioritize the tasks based on your interest. The results are usually so expressive that other people can tell if you like it or not during the design process.";
+        }
+        else if (character.race.Name.Equals("Wisp"))
+        {
+            if (character.trait.Name.Equals("Rational"))
+                profileText.text += "\n\n- Wisps tend to please others rather than themself, therefore, they are often worn out. However, a rational Wisp like you can distinguish the border of responsibility and avoid being led by others.";
+            else if (character.trait.Name.Equals("Creative"))
+                profileText.text += "\n\n- You are more active than other Wisps. Not only follow the instruction, you also find ways to improve it.";
+            else if (character.trait.Name.Equals("Emotional"))
+                profileText.text += "\n\n- You are innocent and passionate. Your enthusiasm when supporting others puts a smile on their faces.";
+        }
+        else if (character.race.Name.Equals("Elf"))
+        {
+            if (character.trait.Name.Equals("Rational"))
+                profileText.text += "\n\n- When developing new ideas, you focus on their functionality and practical aspects. You tend to set a goal for each task to make sure each step you took was executed well.";
+            else if (character.trait.Name.Equals("Creative"))
+                profileText.text += "\n\n- Elf are naturally playful. A creative Elf like you is usually a workaholic. You have a list of things you want to do and it never stops expanding.";
+            else if (character.trait.Name.Equals("Emotional"))
+                profileText.text += "\n\n- You easily feel passionate. You constantly inspire others through your design. Sometimes you put too much emotion in negative feedback that it affects your motivation.";
+        }
+        else if (character.race.Name.Equals("Human"))
+        {
+            if (character.trait.Name.Equals("Rational"))
+                profileText.text += "\n\n- Humans are usually not self motivated. Rational Humans like you usually work better under pressure.";
+            else if (character.trait.Name.Equals("Creative"))
+                profileText.text += "\n\n- Humans have wide connections. You can see potential in other people and want to improve with them.";
+            else if (character.trait.Name.Equals("Emotional"))
+                profileText.text += "\n\n- You usually keep the ideas to yourself because you don’t want to take other people's chances to express themself. Keep in mind that sometimes you could be selfish because the people you care about also care about you.";
+        }
+        else if (character.race.Name.Equals("Mermaid"))
+        {
+            if (character.trait.Name.Equals("Rational"))
+                profileText.text += "\n\n- Mermaids are born rational, which makes rational Mermaids perfectionists. You value the learning outcomes and foresee how to achieve it.";
+            else if (character.trait.Name.Equals("Creative"))
+                profileText.text += "\n\n- You are bold. You are not stressed out about the design outcome because you are confident and only want to express yourself through design.";
+            else if (character.trait.Name.Equals("Emotional"))
+                profileText.text += "\n\n- You are expressive and supportive. You like to have a competitive companion to constantly improve each other.";
+        }
 
         profileText.text += string.Format(character.hobby.ProfileInfo, '\n');
         profileText.text += string.Format(character.table.ProfileInfo, '\n');
