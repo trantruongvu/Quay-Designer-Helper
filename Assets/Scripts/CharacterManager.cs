@@ -40,11 +40,17 @@ public class CharacterManager : MonoBehaviour
     // Wardrobe
     [Header("Wardrobe")]
     public Transform wcontentRace;
+    List<ItemScript> wcontentRaces;
     public Transform wcontentTrait;
+    List<ItemScript> wcontentTraits;
     public Transform wcontentHobby;
+    List<ItemScript> wcontentHobbies;
     public Transform wcontentCloth;
+    List<ItemScript> wcontentClothes;
     public Transform wcontentWall;
+    List<ItemScript> wcontentWalls;
     public Transform wcontentTable;
+    List<ItemScript> wcontentTables;
 
     public Transform wvaluewvalueControl;
     public Transform wvalueExecution;
@@ -115,19 +121,19 @@ public class CharacterManager : MonoBehaviour
         _walls = new List<ItemScript>();
         _hobbies = new List<ItemScript>();
 
+        wcontentRaces = new List<ItemScript>();
+        wcontentTraits = new List<ItemScript>();
+        wcontentClothes = new List<ItemScript>();
+        wcontentTables = new List<ItemScript>();
+        wcontentWalls = new List<ItemScript>();
+        wcontentHobbies = new List<ItemScript>();
+
         contentRace = panelRace.transform.GetChild(0);
         contentTrait = panelTrait.transform.GetChild(0);
         contentCloth = panelCloth.transform.GetChild(0);
         contentTable = panelTable.transform.GetChild(0);
         contentWall = panelWall.transform.GetChild(0);
         contentHobby = panelHobby.transform.GetChild(0);
-
-        SpawnItemsWardrobe(races, wcontentRace);
-        SpawnItemsWardrobe(traits, wcontentTrait);
-        SpawnItemsWardrobe(clothes, wcontentCloth);
-        SpawnItemsWardrobe(hobbies, wcontentHobby);
-        SpawnItemsWardrobe(tables, wcontentTable);
-        SpawnItemsWardrobe(walls, wcontentWall);
 
         DisplayChooseRace(true);
     }
@@ -396,7 +402,12 @@ public class CharacterManager : MonoBehaviour
         foreach (Item item in items)
         {
             ItemScript newItem = Instantiate(itemPrefab, parent);
-            newItem.image.sprite = item.Avatar;
+
+            if (item.Name.Equals(race.Name) || item.Name.Equals(cloth.Name) || item.Name.Equals(wall.Name) || item.Name.Equals(table.Name) || item.Name.Equals(trait.Name) || item.Name.Equals(hobby.Name))
+                newItem.image.sprite = item.Avatar;
+            else
+                newItem.image.sprite = item.Default;
+
             newItem.btnChoose.onClick.AddListener(() =>
             {
                 btnChoose.onClick.RemoveAllListeners();
@@ -409,8 +420,10 @@ public class CharacterManager : MonoBehaviour
                 {
                     btnChoose.onClick.AddListener(() =>
                     {
-                        imgInfo.SetActive(false);
                         race = item;
+                        for (int i = 0; i < wcontentRaces.Count; i++) { wcontentRaces[i].image.sprite = races[i].Default; }
+                        newItem.image.sprite = item.Avatar;
+                        imgInfo.SetActive(false);
                         GetCharacter();
                     });
                 }
@@ -418,8 +431,10 @@ public class CharacterManager : MonoBehaviour
                 {
                     btnChoose.onClick.AddListener(() =>
                     {
-                        imgInfo.SetActive(false);
                         trait = item;
+                        for (int i = 0; i < wcontentTraits.Count; i++) { wcontentTraits[i].image.sprite = traits[i].Default; }
+                        newItem.image.sprite = item.Avatar;
+                        imgInfo.SetActive(false);
                         GetCharacter();
                     });
                 }
@@ -427,8 +442,10 @@ public class CharacterManager : MonoBehaviour
                 {
                     btnChoose.onClick.AddListener(() =>
                     {
-                        imgInfo.SetActive(false);
                         wall = item;
+                        for (int i = 0; i < wcontentWalls.Count; i++) { wcontentWalls[i].image.sprite = walls[i].Default; }
+                        newItem.image.sprite = item.Avatar;
+                        imgInfo.SetActive(false);
                         GetCharacter();
                     });
                 }
@@ -436,8 +453,10 @@ public class CharacterManager : MonoBehaviour
                 {
                     btnChoose.onClick.AddListener(() =>
                     {
-                        imgInfo.SetActive(false);
                         table = item;
+                        for (int i = 0; i < wcontentTables.Count; i++) { wcontentTables[i].image.sprite = tables[i].Default; }
+                        newItem.image.sprite = item.Avatar;
+                        imgInfo.SetActive(false);
                         GetCharacter();
                     });
                 }
@@ -445,8 +464,10 @@ public class CharacterManager : MonoBehaviour
                 {
                     btnChoose.onClick.AddListener(() =>
                     {
-                        imgInfo.SetActive(false);
                         cloth = item;
+                        for (int i = 0; i < wcontentClothes.Count; i++) { wcontentClothes[i].image.sprite = clothes[i].Default; }
+                        newItem.image.sprite = item.Avatar;
+                        imgInfo.SetActive(false);
                         GetCharacter();
                     });
                 }
@@ -454,19 +475,21 @@ public class CharacterManager : MonoBehaviour
                 {
                     btnChoose.onClick.AddListener(() =>
                     {
-                        imgInfo.SetActive(false);
                         hobby = item;
+                        for (int i = 0; i < wcontentHobbies.Count; i++) { wcontentHobbies[i].image.sprite = hobbies[i].Default; }
+                        newItem.image.sprite = item.Avatar;
+                        imgInfo.SetActive(false);
                         GetCharacter();
                     });
                 }
             });
 
-            //if (parent == wcontentRace) { _races.Add(newItem); }
-            //else if (parent == wcontentTrait) { _traits.Add(newItem); }
-            //else if (parent == wcontentWall) { _walls.Add(newItem); }
-            //else if (parent == wcontentTable) { _tables.Add(newItem); }
-            //else if (parent == wcontentCloth) { _clothes.Add(newItem); }
-            //else if (parent == wcontentHobby) { _hobbies.Add(newItem); }
+            if (parent == wcontentRace) { wcontentRaces.Add(newItem); }
+            else if (parent == wcontentTrait) { wcontentTraits.Add(newItem); }
+            else if (parent == wcontentWall) { wcontentWalls.Add(newItem); }
+            else if (parent == wcontentTable) { wcontentTables.Add(newItem); }
+            else if (parent == wcontentCloth) { wcontentClothes.Add(newItem); }
+            else if (parent == wcontentHobby) { wcontentHobbies.Add(newItem); }
         }
     }
 
@@ -475,6 +498,14 @@ public class CharacterManager : MonoBehaviour
         panelCreate.SetActive(false);
         GetCharacter();
         panelChacter.SetActive(status);
+
+        // Wardrobe
+        SpawnItemsWardrobe(races, wcontentRace);
+        SpawnItemsWardrobe(traits, wcontentTrait);
+        SpawnItemsWardrobe(clothes, wcontentCloth);
+        SpawnItemsWardrobe(hobbies, wcontentHobby);
+        SpawnItemsWardrobe(tables, wcontentTable);
+        SpawnItemsWardrobe(walls, wcontentWall);
     }
 
     public void GetCharacter()

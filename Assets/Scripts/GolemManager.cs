@@ -7,6 +7,9 @@ public class GolemManager : MonoBehaviour
 {
     List<IdleTalk> idleTalks;
     IdleTalk idleTalk;
+    bool isStarted = false;
+    int idleCount = 0;
+
 
     List<CoolTalk> coolTalks;
     //CoolTalk coolTalk;
@@ -229,7 +232,124 @@ public class GolemManager : MonoBehaviour
 
     public void StartIdleTalk()
     {
+        btnIdle.gameObject.SetActive(false);
+        btnCool.gameObject.SetActive(false);
+        btnPlan.gameObject.SetActive(false);
 
+        if (!isStarted)
+        {
+            isStarted = true;
+            if (idleCount >= idleTalks.Count)
+                planCount = 0;
+            idleTalk = idleTalks[idleCount];
+            idleCount++;
+
+            btnNext.gameObject.SetActive(true);
+
+            // ask - neutral
+            imgHead.sprite = neutral;
+            txtGolem.text = idleTalk.ask;
+
+            btnNext.onClick.RemoveAllListeners();
+            btnNext.onClick.AddListener(() =>
+            {
+                btnNo.gameObject.SetActive(true);
+                btnYes.gameObject.SetActive(true);
+
+                // No - sad
+                btnNext.onClick.RemoveAllListeners();
+                btnNo.onClick.RemoveAllListeners();
+                btnNo.onClick.AddListener(() =>
+                {
+                    btnNo.gameObject.SetActive(false);
+                    btnYes.gameObject.SetActive(false);
+
+                    imgHead.sprite = sad;
+                    txtGolem.text = idleTalk.startNo;
+
+                    // End - happy
+                    btnNext.onClick.RemoveAllListeners();
+                    btnNext.onClick.AddListener(() =>
+                    {
+                        imgHead.sprite = happy;
+                        txtGolem.text = idleTalk.endNo;
+
+                        // back
+                        btnNext.onClick.RemoveAllListeners();
+                        btnNext.onClick.AddListener(() =>
+                        {
+                            btnIdle.gameObject.SetActive(true);
+                            btnCool.gameObject.SetActive(true);
+                            btnPlan.gameObject.SetActive(true);
+
+                            imgHead.sprite = neutral;
+                            txtGolem.text = txtDefault;
+                        });
+                    });
+                });
+
+                // Yes - neutral
+                btnNext.onClick.RemoveAllListeners();
+                btnYes.onClick.RemoveAllListeners();
+                btnYes.onClick.AddListener(() =>
+                {
+                    btnNo.gameObject.SetActive(false);
+                    btnYes.gameObject.SetActive(false);
+                    btnEnter.gameObject.SetActive(true);
+                    inputAnswer.text = "";
+                    inputAnswer.gameObject.SetActive(true);
+
+                    imgHead.sprite = neutral;
+                    txtGolem.text = idleTalk.startYes;
+
+                    btnEnter.onClick.RemoveAllListeners();
+                    btnEnter.onClick.AddListener(() =>
+                    {
+                        if (string.IsNullOrWhiteSpace(inputAnswer.text))
+                            return;
+
+                        btnEnter.gameObject.SetActive(false);
+                        inputAnswer.gameObject.SetActive(false);
+
+                        // End - happy
+                        imgHead.sprite = happy;
+                        txtGolem.text = idleTalk.endYes;
+
+                        // back
+                        btnNext.onClick.RemoveAllListeners();
+                        btnNext.onClick.AddListener(() =>
+                        {
+                            btnIdle.gameObject.SetActive(true);
+                            btnCool.gameObject.SetActive(true);
+                            btnPlan.gameObject.SetActive(true);
+
+                            imgHead.sprite = neutral;
+                            txtGolem.text = txtDefault;
+                        });
+                    });
+                });
+            });
+        }
+        else
+        {
+
+            imgHead.sprite = neutral;
+            txtGolem.text = idleTalk.retry;
+
+            // back
+            btnNext.onClick.RemoveAllListeners();
+            btnNext.onClick.AddListener(() =>
+            {
+                isStarted = false;
+
+                btnIdle.gameObject.SetActive(true);
+                btnCool.gameObject.SetActive(true);
+                btnPlan.gameObject.SetActive(true);
+
+                imgHead.sprite = neutral;
+                txtGolem.text = txtDefault;
+            });
+        }
     }
 
     public void StartCoolTalk()
